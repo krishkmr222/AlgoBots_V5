@@ -51,7 +51,7 @@
     }
 
     ::-webkit-scrollbar-thumb:hover {
-        @apply bg-primary-focus;
+        @apply bg-primary;
     }
 }
 
