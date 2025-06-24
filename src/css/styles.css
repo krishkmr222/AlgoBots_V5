@@ -9,13 +9,13 @@
 
 /* Modern design tokens and variables */
 :root {
-    --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --gradient-primary: linear-gradient(135deg, #10b981 0%, #06b6d4 100%);
     --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
     --gradient-success: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
     --gradient-trading: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
     --gradient-dark: linear-gradient(135deg, #0c0c0c 0%, #1a1a1a 100%);
     
-    --shadow-primary: 0 10px 40px rgba(103, 126, 234, 0.15);
+    --shadow-primary: 0 10px 40px rgba(16, 185, 129, 0.15);
     --shadow-secondary: 0 10px 40px rgba(245, 87, 108, 0.15);
     --shadow-success: 0 10px 40px rgba(79, 172, 254, 0.15);
     --shadow-dark: 0 20px 60px rgba(0, 0, 0, 0.3);
