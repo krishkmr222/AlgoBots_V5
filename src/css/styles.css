@@ -166,7 +166,7 @@
     .card-modern:hover {
         transform: translateY(-8px) scale(1.02);
         box-shadow: var(--shadow-dark);
-        border-color: rgba(99, 102, 241, 0.3);
+        border-color: rgba(16, 185, 129, 0.3);
     }
 
     .card-modern::before {
