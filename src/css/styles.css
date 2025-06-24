@@ -196,8 +196,8 @@
 
     .stat-card-modern:hover {
         background: linear-gradient(135deg, 
-            rgba(99, 102, 241, 0.1) 0%, 
-            rgba(168, 85, 247, 0.05) 100%);
+            rgba(16, 185, 129, 0.1) 0%, 
+            rgba(6, 182, 212, 0.05) 100%);
         transform: translateY(-5px);
     }
 
