@@ -7,18 +7,18 @@
 <div id="particles-js" class="hero-particles"></div>
 
 <!-- Hero Section -->
-<section class="hero-section">
+<section class="hero-section w-full">
     <div class="bg-animated">
-        <div class="floating-shape w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full"></div>
-        <div class="floating-shape w-16 h-16 bg-gradient-to-r from-green-500 to-teal-600 rounded-full"></div>
-        <div class="floating-shape w-12 h-12 bg-gradient-to-r from-pink-500 to-red-600 rounded-full"></div>
+        <div class="floating-shape w-20 h-20 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full"></div>
+        <div class="floating-shape w-16 h-16 bg-gradient-to-r from-blue-600 to-blue-700 rounded-full"></div>
+        <div class="floating-shape w-12 h-12 bg-gradient-to-r from-blue-400 to-blue-500 rounded-full"></div>
     </div>
 
     <div class="hero-content" data-aos="fade-up" data-aos-duration="1200">
         <h1 class="hero-title">
             Your Personal
             <br>
-            <span class="typed-text text-gradient-primary">Algo Trading Platform</span>
+            <span class="typed-text bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">Algo Trading Platform</span>
         </h1>
         
         <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="300">
@@ -27,13 +27,13 @@
         </p>
         
         <div class="hero-buttons" data-aos="fade-up" data-aos-delay="600">
-            <a href="{{ url_for('auth.login') }}" class="btn btn-primary-modern btn-lg">
+            <a href="{{ url_for('auth.login') }}" class="btn bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white border-none btn-lg">
                 <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"></path>
                 </svg>
                 Start Trading Now
             </a>
-            <a href="/download" class="btn btn-secondary-modern btn-lg">
+            <a href="/download" class="btn bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white border-none btn-lg">
                 <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
                 </svg>
@@ -44,31 +44,31 @@
 </section>
 
 <!-- Features Section -->
-<section class="section-modern">
-    <div class="container">
+<section class="section-modern w-full">
+    <div class="px-6 py-20">
         <div class="section-header-modern" data-aos="fade-up">
             <h2>Why Choose OpenAlgo?</h2>
             <p>Experience the future of algorithmic trading with our comprehensive platform designed for traders of all levels.</p>
         </div>
 
-        <div class="grid-modern">
+        <div class="grid-modern max-w-7xl mx-auto">
             <!-- Multi-Broker Integration -->
             <div class="card-modern" data-aos="fade-up" data-aos-delay="100">
                 <div class="card-body">
                     <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center mr-4">
+                        <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg flex items-center justify-center mr-4">
                             <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path>
                             </svg>
                         </div>
-                        <h3 class="text-xl font-bold text-gradient-primary">20+ Broker Integration</h3>
+                        <h3 class="text-xl font-bold bg-gradient-to-r from-blue-500 to-blue-600 bg-clip-text text-transparent">20+ Broker Integration</h3>
                     </div>
                     <p class="text-gray-300 mb-4">Seamlessly connect with major Indian brokers including Zerodha, Angel One, Upstox, ICICI Direct, and many more.</p>
                     <div class="flex flex-wrap gap-2">
-                        <span class="badge badge-primary">Zerodha</span>
-                        <span class="badge badge-secondary">Angel One</span>
-                        <span class="badge badge-accent">Upstox</span>
-                        <span class="badge badge-success">Fyers</span>
+                        <span class="badge bg-blue-500 text-white border-blue-500">Zerodha</span>
+                        <span class="badge bg-blue-600 text-white border-blue-600">Angel One</span>
+                        <span class="badge bg-blue-500 text-white border-blue-500">Upstox</span>
+                        <span class="badge bg-blue-600 text-white border-blue-600">Fyers</span>
                     </div>
                 </div>
             </div>
@@ -77,15 +77,15 @@
             <div class="card-modern" data-aos="fade-up" data-aos-delay="200">
                 <div class="card-body">
                     <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-gradient-to-r from-green-500 to-teal-500 rounded-lg flex items-center justify-center mr-4">
+                        <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg flex items-center justify-center mr-4">
                             <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                             </svg>
                         </div>
-                        <h3 class="text-xl font-bold text-gradient-success">Lightning Fast Execution</h3>
+                        <h3 class="text-xl font-bold bg-gradient-to-r from-blue-500 to-blue-600 bg-clip-text text-transparent">Lightning Fast Execution</h3>
                     </div>
                     <p class="text-gray-300 mb-4">Execute your trading strategies in real-time with minimal latency. Our optimized architecture ensures your orders are placed within milliseconds.</p>
-                    <div class="trading-chart h-16 bg-gradient-to-r from-green-500/10 to-teal-500/10 rounded-lg"></div>
+                    <div class="trading-chart h-16 bg-gradient-to-r from-blue-500/10 to-blue-600/10 rounded-lg"></div>
                 </div>
             </div>
 
@@ -93,12 +93,12 @@
             <div class="card-modern" data-aos="fade-up" data-aos-delay="300">
                 <div class="card-body">
                     <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center mr-4">
+                        <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg flex items-center justify-center mr-4">
                             <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
                             </svg>
                         </div>
-                        <h3 class="text-xl font-bold text-gradient-primary">Multi-Platform Support</h3>
+                        <h3 class="text-xl font-bold bg-gradient-to-r from-blue-500 to-blue-600 bg-clip-text text-transparent">Multi-Platform Support</h3>
                     </div>
                     <p class="text-gray-300 mb-4">Connect from anywhere - TradingView, Amibroker, Python, Excel, Google Sheets, MetaTrader, ChartInk, and more.</p>
                     <div class="grid grid-cols-3 gap-2 text-sm">
@@ -116,25 +116,25 @@
             <div class="card-modern" data-aos="fade-up" data-aos-delay="400">
                 <div class="card-body">
                     <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-gradient-to-r from-orange-500 to-red-500 rounded-lg flex items-center justify-center mr-4">
+                        <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg flex items-center justify-center mr-4">
                             <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
                             </svg>
                         </div>
-                        <h3 class="text-xl font-bold text-gradient-primary">Advanced Analytics</h3>
+                        <h3 class="text-xl font-bold bg-gradient-to-r from-blue-500 to-blue-600 bg-clip-text text-transparent">Advanced Analytics</h3>
                     </div>
                     <p class="text-gray-300 mb-4">Track performance, analyze strategies, and monitor latency with our comprehensive analytics dashboard.</p>
                     <div class="flex justify-between items-center">
                         <div class="text-center">
-                            <div class="text-2xl font-bold text-gradient-success">99.9%</div>
+                            <div class="text-2xl font-bold bg-gradient-to-r from-blue-500 to-blue-600 bg-clip-text text-transparent">99.9%</div>
                             <div class="text-xs text-gray-400">Uptime</div>
                         </div>
                         <div class="text-center">
-                            <div class="text-2xl font-bold text-gradient-success">&lt;100ms</div>
+                            <div class="text-2xl font-bold bg-gradient-to-r from-blue-500 to-blue-600 bg-clip-text text-transparent">&lt;100ms</div>
                             <div class="text-xs text-gray-400">Latency</div>
                         </div>
                         <div class="text-center">
-                            <div class="text-2xl font-bold text-gradient-success">24/7</div>
+                            <div class="text-2xl font-bold bg-gradient-to-r from-blue-500 to-blue-600 bg-clip-text text-transparent">24/7</div>
                             <div class="text-xs text-gray-400">Support</div>
                         </div>
                     </div>
@@ -145,18 +145,18 @@
             <div class="card-modern" data-aos="fade-up" data-aos-delay="500">
                 <div class="card-body">
                     <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg flex items-center justify-center mr-4">
+                        <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg flex items-center justify-center mr-4">
                             <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
                             </svg>
                         </div>
-                        <h3 class="text-xl font-bold text-gradient-primary">Enterprise Security</h3>
+                        <h3 class="text-xl font-bold bg-gradient-to-r from-blue-500 to-blue-600 bg-clip-text text-transparent">Enterprise Security</h3>
                     </div>
                     <p class="text-gray-300 mb-4">Bank-grade security with encrypted connections, secure API handling, and comprehensive audit trails for all your trading activities.</p>
                     <div class="flex flex-wrap gap-2">
-                        <span class="badge badge-success">SSL Encrypted</span>
-                        <span class="badge badge-info">API Secured</span>
-                        <span class="badge badge-warning">Audit Logs</span>
+                        <span class="badge bg-blue-500 text-white border-blue-500">SSL Encrypted</span>
+                        <span class="badge bg-blue-600 text-white border-blue-600">API Secured</span>
+                        <span class="badge bg-blue-500 text-white border-blue-500">Audit Logs</span>
                     </div>
                 </div>
             </div>
@@ -165,16 +165,16 @@
             <div class="card-modern" data-aos="fade-up" data-aos-delay="600">
                 <div class="card-body">
                     <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-gradient-to-r from-teal-500 to-cyan-500 rounded-lg flex items-center justify-center mr-4">
+                        <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg flex items-center justify-center mr-4">
                             <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
                             </svg>
                         </div>
-                        <h3 class="text-xl font-bold text-gradient-success">100% Open Source</h3>
+                        <h3 class="text-xl font-bold bg-gradient-to-r from-blue-500 to-blue-600 bg-clip-text text-transparent">100% Open Source</h3>
                     </div>
                     <p class="text-gray-300 mb-4">Completely free and open source under AGPL v3.0. Transparent, community-driven, and always improving.</p>
                     <div class="flex items-center justify-between">
-                        <a href="https://github.com/marketcalls/openalgo" target="_blank" class="btn btn-sm btn-outline">
+                        <a href="https://github.com/marketcalls/openalgo" target="_blank" class="btn btn-sm bg-gray-800 text-white border-gray-800 hover:bg-gray-700">
                             <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                             </svg>
@@ -192,18 +192,18 @@
 </section>
 
 <!-- CTA Section -->
-<section class="section-modern bg-gradient-to-r from-blue-600/10 to-purple-600/10">
-    <div class="container text-center">
+<section class="section-modern bg-gradient-to-r from-blue-600/10 to-blue-700/10 w-full">
+    <div class="px-6 py-20 text-center">
         <div data-aos="fade-up">
-            <h2 class="text-4xl md:text-5xl font-bold mb-6 text-gradient-primary">Ready to Transform Your Trading?</h2>
+            <h2 class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-500 to-blue-600 bg-clip-text text-transparent">Ready to Transform Your Trading?</h2>
             <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
                 Join thousands of traders who have already revolutionized their algorithmic trading with OpenAlgo.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="{{ url_for('auth.login') }}" class="btn btn-primary-modern btn-lg">
+                <a href="{{ url_for('auth.login') }}" class="btn bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white border-none btn-lg">
                     Get Started Now
                 </a>
-                <a href="https://docs.openalgo.in" target="_blank" class="btn btn-secondary-modern btn-lg">
+                <a href="https://docs.openalgo.in" target="_blank" class="btn bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white border-none btn-lg">
                     View Documentation
                 </a>
             </div>
@@ -236,6 +236,11 @@
     .hero-section {
         position: relative;
         z-index: 1;
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     
     #particles-js {
