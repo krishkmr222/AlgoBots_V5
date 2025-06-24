@@ -22,10 +22,40 @@ def home():
 def download():
     return render_template('download.html')
 
-@core_bp.route('/faq')
+@core_bp.route('/about')
 @invalidate_session_if_invalid
-def faq():
-    return render_template('faq.html')
+def about():
+    return render_template('about.html')
+
+@core_bp.route('/vision')
+@invalidate_session_if_invalid
+def vision():
+    return render_template('vision.html')
+
+@core_bp.route('/mission')
+@invalidate_session_if_invalid
+def mission():
+    return render_template('mission.html')
+
+@core_bp.route('/team')
+@invalidate_session_if_invalid
+def team():
+    return render_template('team.html')
+
+@core_bp.route('/services')
+@invalidate_session_if_invalid
+def services():
+    return render_template('services.html')
+
+@core_bp.route('/roadmap')
+@invalidate_session_if_invalid
+def roadmap():
+    return render_template('roadmap.html')
+
+@core_bp.route('/contact')
+@invalidate_session_if_invalid
+def contact():
+    return render_template('contact.html')
 
 @core_bp.route('/setup', methods=['GET', 'POST'])
 def setup():
