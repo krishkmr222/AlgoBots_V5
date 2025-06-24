@@ -1,0 +1,242 @@
+{% extends "layout.html" %}
+
+{% block title %}About Us - OpenAlgo{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="relative bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 text-white overflow-hidden">
+    <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"%3E%3Cg fill-opacity="0.1"%3E%3Cpolygon fill="%23ffffff" points="50,0 60,40 100,50 60,60 50,100 40,60 0,50 40,40"/%3E%3C/g%3E%3C/svg%3E')] opacity-20"></div>
+    <div class="container mx-auto px-6 py-24 relative z-10">
+        <div class="text-center max-w-4xl mx-auto">
+            <h1 class="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-200 to-blue-400 bg-clip-text text-transparent">
+                About OpenAlgo
+            </h1>
+            <p class="text-xl md:text-2xl text-blue-100 leading-relaxed">
+                Revolutionizing algorithmic trading through open-source innovation, empowering traders with 
+                cutting-edge technology and seamless broker integrations.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Story Section -->
+<section class="py-20 bg-white">
+    <div class="container mx-auto px-6">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+            <div>
+                <h2 class="text-4xl font-bold text-gray-900 mb-6">Our Story</h2>
+                <div class="space-y-6 text-lg text-gray-600">
+                    <p>
+                        OpenAlgo was born from a simple yet powerful vision: to democratize algorithmic trading 
+                        by making professional-grade trading infrastructure accessible to everyone. Founded by 
+                        experienced traders and technologists, we recognized the gap between institutional-quality 
+                        trading tools and what individual traders could access.
+                    </p>
+                    <p>
+                        Our journey began with the frustration of dealing with fragmented APIs, unreliable 
+                        connections, and expensive proprietary solutions. We set out to build something different 
+                        - a unified, open-source platform that would bridge the gap between trading strategies 
+                        and execution.
+                    </p>
+                    <p>
+                        Today, OpenAlgo serves thousands of traders across India, providing seamless integration 
+                        with 20+ major brokers and supporting multiple trading platforms. We're proud to be 
+                        100% open-source, ensuring transparency, security, and community-driven development.
+                    </p>
+                </div>
+            </div>
+            <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8">
+                <div class="grid grid-cols-2 gap-6">
+                    <div class="text-center">
+                        <div class="text-4xl font-bold text-blue-600 mb-2">20+</div>
+                        <div class="text-gray-700">Broker Integrations</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl font-bold text-blue-600 mb-2">10k+</div>
+                        <div class="text-gray-700">Active Users</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl font-bold text-blue-600 mb-2">99.9%</div>
+                        <div class="text-gray-700">Uptime</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl font-bold text-blue-600 mb-2">24/7</div>
+                        <div class="text-gray-700">Support</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- What We Do Section -->
+<section class="py-20 bg-blue-50">
+    <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold text-gray-900 mb-6">What We Do</h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                We provide comprehensive algorithmic trading infrastructure that connects your strategies 
+                with the markets through secure, reliable, and lightning-fast execution.
+            </p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Broker Integration -->
+            <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+                <div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-6">
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-4">Multi-Broker Integration</h3>
+                <p class="text-gray-600">
+                    Seamlessly connect with 20+ Indian brokers including Zerodha, Angel One, Upstox, 
+                    and many more through unified APIs.
+                </p>
+            </div>
+
+            <!-- Platform Support -->
+            <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+                <div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-6">
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-4">Multi-Platform Support</h3>
+                <p class="text-gray-600">
+                    Connect from TradingView, Amibroker, Python, Excel, Google Sheets, MetaTrader, 
+                    and more platforms.
+                </p>
+            </div>
+
+            <!-- Real-time Execution -->
+            <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+                <div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-6">
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-4">Lightning-Fast Execution</h3>
+                <p class="text-gray-600">
+                    Execute trades in milliseconds with our optimized infrastructure designed for 
+                    high-frequency trading requirements.
+                </p>
+            </div>
+
+            <!-- Security -->
+            <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+                <div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-6">
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-4">Enterprise Security</h3>
+                <p class="text-gray-600">
+                    Bank-grade security with encrypted connections, secure API handling, and 
+                    comprehensive audit trails.
+                </p>
+            </div>
+
+            <!-- Analytics -->
+            <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+                <div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-6">
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-4">Advanced Analytics</h3>
+                <p class="text-gray-600">
+                    Comprehensive analytics dashboard to track performance, monitor latency, 
+                    and analyze trading strategies.
+                </p>
+            </div>
+
+            <!-- Open Source -->
+            <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+                <div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-6">
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-4">100% Open Source</h3>
+                <p class="text-gray-600">
+                    Completely free and open source under AGPL v3.0. Transparent, community-driven, 
+                    and always improving.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Values Section -->
+<section class="py-20 bg-white">
+    <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold text-gray-900 mb-6">Our Core Values</h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                These principles guide everything we do and shape how we build products for the trading community.
+            </p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="text-center">
+                <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <svg class="w-10 h-10 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-4">Transparency</h3>
+                <p class="text-gray-600">Open-source means complete transparency in how our platform works and evolves.</p>
+            </div>
+            
+            <div class="text-center">
+                <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <svg class="w-10 h-10 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-4">Performance</h3>
+                <p class="text-gray-600">Lightning-fast execution and minimal latency for competitive trading advantages.</p>
+            </div>
+            
+            <div class="text-center">
+                <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <svg class="w-10 h-10 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-4">Community</h3>
+                <p class="text-gray-600">Built by traders, for traders, with continuous community feedback and contributions.</p>
+            </div>
+            
+            <div class="text-center">
+                <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <svg class="w-10 h-10 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-4">Reliability</h3>
+                <p class="text-gray-600">99.9% uptime and robust infrastructure you can depend on for critical trading operations.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action -->
+<section class="py-20 bg-gradient-to-r from-blue-600 to-blue-800 text-white">
+    <div class="container mx-auto px-6 text-center">
+        <h2 class="text-4xl font-bold mb-6">Ready to Transform Your Trading?</h2>
+        <p class="text-xl mb-8 max-w-2xl mx-auto">
+            Join thousands of traders who have revolutionized their algorithmic trading with OpenAlgo.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="{{ url_for('auth.login') }}" class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors">
+                Get Started Now
+            </a>
+            <a href="/download" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors">
+                Download OpenAlgo
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}
