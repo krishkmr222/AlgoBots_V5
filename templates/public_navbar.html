@@ -6,26 +6,29 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
             </svg>
         </label>
-        <a href="/" class="btn btn-ghost normal-case text-xl gap-2 text-white hover:text-primary">
+        <a href="/" class="btn btn-ghost normal-case text-xl gap-2 text-white hover:text-blue-400">
             <img src="{{ url_for('static', filename='favicon/logo.png') }}" alt="OpenAlgo Logo" class="h-8 w-8">
-            <span class="hidden sm:inline font-bold text-gradient-primary">OpenAlgo</span>
+            <span class="hidden sm:inline font-bold bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">OpenAlgo</span>
         </a>
     </div>
     
     <!-- Desktop Navigation (center) -->
     <div class="navbar-center hidden lg:flex">
         <ul class="menu menu-horizontal px-1 text-white">
-            <li><a href="/" class="hover:text-primary transition-colors {{ 'text-primary font-semibold' if request.path == '/' }}">Home</a></li>
-            <li><a href="/faq" class="hover:text-primary transition-colors {{ 'text-primary font-semibold' if request.path == '/faq' }}">FAQ</a></li>
-            <li><a href="https://openalgo.in/discord" target="_blank" rel="noopener noreferrer" class="hover:text-primary transition-colors">Community</a></li>
-            <li><a href="https://openalgo.in/roadmap" target="_blank" rel="noopener noreferrer" class="hover:text-primary transition-colors">Roadmap</a></li>
-            <li><a href="https://docs.openalgo.in" target="_blank" rel="noopener noreferrer" class="hover:text-primary transition-colors">Docs</a></li>
+            <li><a href="/" class="hover:text-blue-400 transition-colors {{ 'text-blue-400 font-semibold' if request.path == '/' }}">Home</a></li>
+            <li><a href="/about" class="hover:text-blue-400 transition-colors {{ 'text-blue-400 font-semibold' if request.path == '/about' }}">About</a></li>
+            <li><a href="/vision" class="hover:text-blue-400 transition-colors {{ 'text-blue-400 font-semibold' if request.path == '/vision' }}">Vision</a></li>
+            <li><a href="/mission" class="hover:text-blue-400 transition-colors {{ 'text-blue-400 font-semibold' if request.path == '/mission' }}">Mission</a></li>
+            <li><a href="/team" class="hover:text-blue-400 transition-colors {{ 'text-blue-400 font-semibold' if request.path == '/team' }}">Team</a></li>
+            <li><a href="/services" class="hover:text-blue-400 transition-colors {{ 'text-blue-400 font-semibold' if request.path == '/services' }}">Services</a></li>
+            <li><a href="/roadmap" class="hover:text-blue-400 transition-colors {{ 'text-blue-400 font-semibold' if request.path == '/roadmap' }}">Roadmap</a></li>
+            <li><a href="/contact" class="hover:text-blue-400 transition-colors {{ 'text-blue-400 font-semibold' if request.path == '/contact' }}">Contact</a></li>
         </ul>
     </div>
     
     <!-- Right side buttons -->
     <div class="navbar-end">
-        <a href="/download" class="btn btn-primary-modern btn-sm mr-3">
+        <a href="/download" class="btn bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white border-none btn-sm mr-3">
             <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
             </svg>
@@ -33,7 +36,7 @@
         </a>
         
         <!-- Theme Toggle -->
-        <label class="swap swap-rotate btn btn-ghost btn-circle text-white hover:text-primary">
+        <label class="swap swap-rotate btn btn-ghost btn-circle text-white hover:text-blue-400">
             <input type="checkbox" class="theme-controller" />
             <!-- sun icon -->
             <svg class="swap-on fill-current w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
