@@ -135,25 +135,46 @@ class OpenAlgoAnimations {
     }
 
     initTypedEffects() {
-        // Typed.js for hero section
-        const typedElement = document.querySelector('.typed-text');
-        if (typedElement && typeof Typed !== 'undefined') {
-            new Typed('.typed-text', {
-                strings: [
-                    'Algorithmic Trading Platform',
-                    'Multi-Broker Integration',
-                    'Real-Time Market Data',
-                    'Strategy Automation',
-                    'Risk Management'
-                ],
-                typeSpeed: 80,
-                backSpeed: 50,
-                backDelay: 2000,
-                loop: true,
-                showCursor: true,
-                cursorChar: '|'
-            });
+        // Typewriter effect for "Your Personal" text
+        const personalTextElement = document.querySelector('.typed-personal-text');
+        if (personalTextElement) {
+            const texts = ['Your Personal', 'Your AI-Powered', 'Your Automated', 'Your Smart', 'Your Advanced'];
+            let currentTextIndex = 0;
+            let currentCharIndex = 0;
+            let isDeleting = false;
+            
+            function typeWriter() {
+                const currentText = texts[currentTextIndex];
+                
+                if (isDeleting) {
+                    personalTextElement.textContent = currentText.substring(0, currentCharIndex - 1);
+                    currentCharIndex--;
+                } else {
+                    personalTextElement.textContent = currentText.substring(0, currentCharIndex + 1);
+                    currentCharIndex++;
+                }
+                
+                let typingSpeed = isDeleting ? 100 : 150;
+                
+                if (!isDeleting && currentCharIndex === currentText.length) {
+                    // Pause at end of text
+                    typingSpeed = 2000;
+                    isDeleting = true;
+                } else if (isDeleting && currentCharIndex === 0) {
+                    isDeleting = false;
+                    currentTextIndex = (currentTextIndex + 1) % texts.length;
+                    typingSpeed = 500;
+                }
+                
+                setTimeout(typeWriter, typingSpeed);
+            }
+            
+            // Start the typewriter effect
+            typeWriter();
         }
+        
+        // Remove the old typed.js implementation for the platform text
+        // Platform text now has static gradient animation via CSS
     }
 
     initParticleEffects() {
