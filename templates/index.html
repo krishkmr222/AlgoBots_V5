@@ -6,39 +6,52 @@
 <!-- Particles Background -->
 <div id="particles-js" class="hero-particles"></div>
 
-<!-- Hero Section -->
+<!-- Hero Section with Background Image -->
 <section class="hero-section w-full">
+    <!-- Full-width transparent background image -->
+    <div class="hero-background absolute inset-0 w-full h-full z-0">
+        <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/70"></div>
+        <img src="{{ url_for('static', filename='images/hero-background.jpg') }}" 
+             alt="AI Trading Background" 
+             class="w-full h-full object-cover opacity-40">
+    </div>
+    
     <div class="bg-animated">
-        <div class="floating-shape w-20 h-20 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full"></div>
-        <div class="floating-shape w-16 h-16 bg-gradient-to-r from-blue-600 to-blue-700 rounded-full"></div>
-        <div class="floating-shape w-12 h-12 bg-gradient-to-r from-blue-400 to-blue-500 rounded-full"></div>
+        <div class="floating-shape w-20 h-20 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-full"></div>
+        <div class="floating-shape w-16 h-16 bg-gradient-to-r from-purple-600 to-pink-700 rounded-full"></div>
+        <div class="floating-shape w-12 h-12 bg-gradient-to-r from-orange-400 to-red-500 rounded-full"></div>
     </div>
 
-    <div class="hero-content" data-aos="fade-up" data-aos-duration="1200">
-        <h1 class="hero-title">
-            Your Personal
-            <br>
-            <span class="typed-text bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">Algo Trading Platform</span>
-        </h1>
+    <div class="hero-content relative z-10 text-center" data-aos="fade-up" data-aos-duration="1200">
+        <div class="hero-text-container">
+            <h1 class="hero-title-main">
+                <span class="typed-personal-text">Your Personal</span>
+            </h1>
+            <h2 class="hero-title-platform">
+                <span class="platform-gradient-text">Algo Trading Platform</span>
+            </h2>
+        </div>
         
         <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="300">
             Connect your algo strategies seamlessly with <strong>20+ Indian brokers</strong>. 
             Run your strategies from any platform - Amibroker, TradingView, Python, ChartInk, MetaTrader, Excel, or Google Sheets.
         </p>
         
-        <div class="hero-buttons" data-aos="fade-up" data-aos-delay="600">
-            <a href="{{ url_for('auth.login') }}" class="btn bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white border-none btn-lg">
-                <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"></path>
-                </svg>
-                Start Trading Now
-            </a>
-            <a href="/download" class="btn bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white border-none btn-lg">
-                <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
-                </svg>
-                Download OpenAlgo
-            </a>
+        <div class="hero-buttons-container">
+            <div class="hero-buttons" data-aos="fade-up" data-aos-delay="600">
+                <a href="{{ url_for('auth.login') }}" class="btn bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white border-none btn-lg">
+                    <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"></path>
+                    </svg>
+                    Start Trading Now
+                </a>
+                <a href="/download" class="btn bg-gradient-to-r from-purple-600 to-pink-700 hover:from-purple-700 hover:to-pink-800 text-white border-none btn-lg">
+                    <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                    </svg>
+                    Download OpenAlgo
+                </a>
+            </div>
         </div>
     </div>
 </section>
