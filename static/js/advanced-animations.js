@@ -203,23 +203,31 @@ class OpenAlgoAnimations {
     initPlatformTextPulse() {
         const platformText = document.querySelector('.platform-gradient-text');
         if (platformText) {
-            // Create pulsing animation for the gradient text
+            // Enhanced pulsing animation for the gradient text with improved text gradient effect
             gsap.to(platformText, {
-                scale: 1.02,
-                duration: 2,
+                scale: 1.03,
+                duration: 2.5,
                 ease: 'power2.inOut',
                 repeat: -1,
                 yoyo: true,
                 transformOrigin: 'center center'
             });
             
-            // Add subtle glow effect animation
+            // Enhanced glow effect animation with multiple layers
             gsap.to(platformText, {
-                textShadow: '0 0 20px rgba(16, 185, 129, 0.3), 0 0 40px rgba(6, 182, 212, 0.2), 0 0 60px rgba(139, 92, 246, 0.1)',
-                duration: 3,
+                textShadow: '0 0 30px rgba(16, 185, 129, 0.4), 0 0 60px rgba(6, 182, 212, 0.3), 0 0 90px rgba(139, 92, 246, 0.2)',
+                duration: 3.5,
                 ease: 'power2.inOut',
                 repeat: -1,
                 yoyo: true
+            });
+            
+            // Add rotating gradient effect
+            gsap.to(platformText, {
+                backgroundPosition: '200% center',
+                duration: 4,
+                ease: 'none',
+                repeat: -1
             });
         }
     }
