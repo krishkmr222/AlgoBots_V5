@@ -135,7 +135,7 @@ class OpenAlgoAnimations {
     }
 
     initTypedEffects() {
-        // Enhanced typewriter effect for "Your Personal" text with improved looping
+        // Enhanced typewriter effect for "Your Personal" text with improved infinite looping
         const personalTextElement = document.querySelector('.typed-personal-text');
         if (personalTextElement) {
             const texts = [
@@ -145,49 +145,55 @@ class OpenAlgoAnimations {
                 'Your Smart', 
                 'Your Advanced',
                 'Your Professional',
-                'Your Intelligent'
+                'Your Intelligent',
+                'Your Ultimate'
             ];
             let currentTextIndex = 0;
             let currentCharIndex = 0;
             let isDeleting = false;
             let isWaiting = false;
             
+            // Clear any existing text and cursor
+            personalTextElement.innerHTML = '';
+            
             function typeWriter() {
                 if (isWaiting) {
                     isWaiting = false;
-                    setTimeout(typeWriter, 500);
+                    setTimeout(typeWriter, 300);
                     return;
                 }
                 
                 const currentText = texts[currentTextIndex];
                 
                 if (isDeleting) {
-                    personalTextElement.textContent = currentText.substring(0, currentCharIndex - 1);
+                    const newText = currentText.substring(0, currentCharIndex - 1);
+                    personalTextElement.innerHTML = newText + '<span class="typewriter-cursor">|</span>';
                     currentCharIndex--;
                 } else {
-                    personalTextElement.textContent = currentText.substring(0, currentCharIndex + 1);
+                    const newText = currentText.substring(0, currentCharIndex + 1);
+                    personalTextElement.innerHTML = newText + '<span class="typewriter-cursor">|</span>';
                     currentCharIndex++;
                 }
                 
-                let typingSpeed = isDeleting ? 80 : 120;
+                let typingSpeed = isDeleting ? 50 : 100;
                 
                 if (!isDeleting && currentCharIndex === currentText.length) {
                     // Pause at end of text before starting to delete
-                    typingSpeed = 2500;
+                    typingSpeed = 2000;
                     isDeleting = true;
                 } else if (isDeleting && currentCharIndex === 0) {
                     // Finished deleting, move to next text
                     isDeleting = false;
                     currentTextIndex = (currentTextIndex + 1) % texts.length;
-                    typingSpeed = 800;
+                    typingSpeed = 500;
                     isWaiting = true;
                 }
                 
                 setTimeout(typeWriter, typingSpeed);
             }
             
-            // Start the typewriter effect with initial delay
-            setTimeout(typeWriter, 1000);
+            // Start the typewriter effect immediately
+            setTimeout(typeWriter, 500);
         }
         
         // Initialize platform text pulse animation
