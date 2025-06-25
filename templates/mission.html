@@ -1,259 +1,195 @@
 {% extends "layout.html" %}
 
-{% block title %}Our Mission - OpenAlgo{% endblock %}
+{% block title %}Our Mission - AlgoBots{% endblock %}
 
 {% block content %}
-<!-- Hero Section -->
-<section class="relative bg-gradient-to-br from-orange-900 via-red-800 to-orange-900 text-white overflow-hidden">
-    <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"%3E%3Cg fill-opacity="0.1"%3E%3Cpolygon fill="%23ffffff" points="50,0 60,40 100,50 60,60 50,100 40,60 0,50 40,40"/%3E%3C/g%3E%3C/svg%3E')] opacity-20"></div>
-    <div class="container mx-auto px-6 py-20 relative z-10">
-        <div class="text-center max-w-5xl mx-auto">
-            <div class="mb-6">
-                <svg class="w-12 h-12 mx-auto text-orange-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 004.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 003.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
-                </svg>
-            </div>
-            <h1 class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-orange-200 to-red-400 bg-clip-text text-transparent">
-                Our Mission
-            </h1>
-            <p class="text-lg md:text-xl text-orange-100 leading-relaxed font-light">
-                To empower every trader with professional-grade algorithmic trading tools through 
-                open-source innovation and community collaboration.
-            </p>
-        </div>
-    </div>
-</section>
-
-<!-- Mission Statement -->
-<section class="py-24 bg-white">
-    <div class="container mx-auto px-6">
-        <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-5xl font-bold text-gray-900 mb-12">Breaking Down Barriers in Algorithmic Trading</h2>
-            <div class="text-xl text-gray-600 leading-relaxed space-y-8">
-                <p>
-                    Our mission is crystal clear: to eliminate the technological and financial barriers 
-                    that have traditionally kept sophisticated trading tools in the hands of large 
-                    institutions. We believe that innovation in financial technology should benefit 
-                    everyone, not just those with the deepest pockets.
-                </p>
-                <p>
-                    Through our open-source platform, we're creating a level playing field where 
-                    individual traders can access the same caliber of tools and infrastructure that 
-                    power the world's largest trading operations.
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Mission Objectives -->
-<section class="py-24 bg-gradient-to-br from-orange-50 to-red-50">
-    <div class="container mx-auto px-6">
-        <div class="text-center mb-20">
-            <h2 class="text-4xl font-bold text-gray-900 mb-6">How We're Achieving Our Mission</h2>
-            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                Our mission is executed through specific, measurable objectives that drive 
-                every feature we build and every decision we make.
-            </p>
-        </div>
-        
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Objective 1 -->
-            <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow border-t-4 border-emerald-500">
-                <div class="w-16 h-16 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center mb-6">
-                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path>
-                    </svg>
-                </div>
-                <h3 class="text-xl font-bold text-gray-900 mb-4">Universal Integration</h3>
-                <p class="text-gray-600 mb-4">
-                    Connect with every major broker and trading platform, creating a unified 
-                    interface that eliminates the complexity of multiple APIs and protocols.
-                </p>
-                <div class="text-sm text-emerald-600 font-semibold">Target: 100+ Brokers by 2025</div>
-            </div>
-
-            <!-- Objective 2 -->
-            <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow border-t-4 border-orange-500">
-                <div class="w-16 h-16 bg-gradient-to-r from-orange-500 to-red-600 rounded-xl flex items-center justify-center mb-6">
-                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
-                    </svg>
-                </div>
-                <h3 class="text-xl font-bold text-gray-900 mb-4">Zero-Cost Access</h3>
-                <p class="text-gray-600 mb-4">
-                    Maintain 100% free and open-source access to all core features, ensuring 
-                    that financial constraints never prevent anyone from accessing our platform.
-                </p>
-                <div class="text-sm text-orange-600 font-semibold">Status: Always Free & Open</div>
-            </div>
-
-            <!-- Objective 3 -->
-            <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow border-t-4 border-purple-500">
-                <div class="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-600 rounded-xl flex items-center justify-center mb-6">
-                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                    </svg>
-                </div>
-                <h3 class="text-xl font-bold text-gray-900 mb-4">Performance Excellence</h3>
-                <p class="text-gray-600 mb-4">
-                    Deliver institutional-grade performance with sub-100ms latency and 
-                    99.9% uptime, proving that open-source can compete with premium solutions.
-                </p>
-                <div class="text-sm text-purple-600 font-semibold">Current: 99.9% Uptime</div>
-            </div>
-
-            <!-- Objective 4 -->
-            <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow border-t-4 border-cyan-500">
-                <div class="w-16 h-16 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center mb-6">
-                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
-                    </svg>
-                </div>
-                <h3 class="text-xl font-bold text-gray-900 mb-4">Education & Documentation</h3>
-                <p class="text-gray-600 mb-4">
-                    Provide comprehensive learning resources, tutorials, and documentation 
-                    that enable traders of all skill levels to leverage algorithmic trading.
-                </p>
-                <div class="text-sm text-cyan-600 font-semibold">Goal: 1000+ Tutorials</div>
-            </div>
-
-            <!-- Objective 5 -->
-            <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow border-t-4 border-indigo-500">
-                <div class="w-16 h-16 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center mb-6">
-                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                    </svg>
-                </div>
-                <h3 class="text-xl font-bold text-gray-900 mb-4">Community Building</h3>
-                <p class="text-gray-600 mb-4">
-                    Foster a vibrant global community where traders share knowledge, strategies, 
-                    and support each other's trading journey.
-                </p>
-                <div class="text-sm text-indigo-600 font-semibold">Target: 1M+ Community Members</div>
-            </div>
-
-            <!-- Objective 6 -->
-            <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow border-t-4 border-rose-500">
-                <div class="w-16 h-16 bg-gradient-to-r from-rose-500 to-pink-600 rounded-xl flex items-center justify-center mb-6">
-                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                    </svg>
-                </div>
-                <h3 class="text-xl font-bold text-gray-900 mb-4">Innovation Leadership</h3>
-                <p class="text-gray-600 mb-4">
-                    Stay at the forefront of trading technology by continuously integrating 
-                    cutting-edge innovations in AI, blockchain, and financial technology.
-                </p>
-                <div class="text-sm text-rose-600 font-semibold">Focus: Emerging Technologies</div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Our Commitment -->
-<section class="py-24 bg-white">
-    <div class="container mx-auto px-6">
+<!-- Mission Section with Modern Design -->
+<section class="section-modern w-full">
+    <div class="px-6 py-20">
         <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-900 mb-6">Our Commitment to You</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    These are the promises we make to every trader who chooses to be part of the OpenAlgo community.
+            <div class="section-header-modern" data-aos="fade-up">
+                <h1 class="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
+                    Our Mission
+                </h1>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                    Empowering every trader with professional-grade algorithmic trading tools through open-source innovation and community collaboration.
                 </p>
             </div>
-            
-            <div class="grid md:grid-cols-2 gap-12">
-                <div class="space-y-8">
-                    <div class="flex items-start space-x-4">
-                        <div class="w-8 h-8 bg-orange-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                            </svg>
-                        </div>
-                        <div>
-                            <h3 class="text-lg font-bold text-gray-900 mb-2">Always Free Core Platform</h3>
-                            <p class="text-gray-600">
-                                Our core trading infrastructure will always remain free and open-source. 
-                                No hidden fees, no subscription models for basic functionality.
-                            </p>
-                        </div>
+
+            <!-- Mission Pillars -->
+            <div class="grid md:grid-cols-2 gap-12 mt-16">
+                <!-- Left Column - Core Mission -->
+                <div class="space-y-8" data-aos="fade-right">
+                    <div class="bg-gradient-to-r from-blue-500/10 to-purple-600/10 rounded-2xl p-8">
+                        <h2 class="text-3xl font-bold mb-6 bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
+                            Core Mission
+                        </h2>
+                        <p class="text-gray-300 text-lg leading-relaxed mb-6">
+                            To revolutionize algorithmic trading by making advanced trading technologies accessible to everyone, 
+                            fostering innovation through open-source development, and building a community-driven ecosystem 
+                            that democratizes financial markets.
+                        </p>
+                        <ul class="space-y-3 text-gray-300">
+                            <li class="flex items-start gap-3">
+                                <svg class="w-6 h-6 text-blue-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>Eliminate barriers to algorithmic trading</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-6 h-6 text-blue-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>Provide enterprise-grade tools for free</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-6 h-6 text-blue-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>Foster collaboration and knowledge sharing</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-6 h-6 text-blue-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>Maintain transparency and security</span>
+                            </li>
+                        </ul>
                     </div>
+                </div>
+
+                <!-- Right Column - Mission Values -->
+                <div class="space-y-6" data-aos="fade-left">
+                    <h2 class="text-3xl font-bold mb-6 text-white">Our Values</h2>
                     
-                    <div class="flex items-start space-x-4">
-                        <div class="w-8 h-8 bg-orange-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                            </svg>
+                    <!-- Value Cards -->
+                    <div class="space-y-4">
+                        <div class="card-modern">
+                            <div class="card-body p-6">
+                                <div class="flex items-center gap-4 mb-3">
+                                    <div class="w-12 h-12 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-lg flex items-center justify-center">
+                                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                                        </svg>
+                                    </div>
+                                    <h3 class="text-xl font-bold text-emerald-500">Transparency</h3>
+                                </div>
+                                <p class="text-gray-300">Open-source development ensures complete transparency in our platform's operations and security.</p>
+                            </div>
                         </div>
-                        <div>
-                            <h3 class="text-lg font-bold text-gray-900 mb-2">Transparent Development</h3>
-                            <p class="text-gray-600">
-                                Every feature, every bug fix, and every roadmap decision is made in the open. 
-                                You'll always know what we're working on and why.
-                            </p>
+
+                        <div class="card-modern">
+                            <div class="card-body p-6">
+                                <div class="flex items-center gap-4 mb-3">
+                                    <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-600 rounded-lg flex items-center justify-center">
+                                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                        </svg>
+                                    </div>
+                                    <h3 class="text-xl font-bold text-blue-500">Accessibility</h3>
+                                </div>
+                                <p class="text-gray-300">Making professional trading tools available to everyone, regardless of their background or resources.</p>
+                            </div>
                         </div>
-                    </div>
-                    
-                    <div class="flex items-start space-x-4">
-                        <div class="w-8 h-8 bg-orange-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                            </svg>
+
+                        <div class="card-modern">
+                            <div class="card-body p-6">
+                                <div class="flex items-center gap-4 mb-3">
+                                    <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-600 rounded-lg flex items-center justify-center">
+                                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                        </svg>
+                                    </div>
+                                    <h3 class="text-xl font-bold text-purple-500">Innovation</h3>
+                                </div>
+                                <p class="text-gray-300">Continuously pushing boundaries with cutting-edge technology and creative solutions.</p>
+                            </div>
                         </div>
-                        <div>
-                            <h3 class="text-lg font-bold text-gray-900 mb-2">Community-Driven Priorities</h3>
-                            <p class="text-gray-600">
-                                Our development priorities are guided by community needs and feedback. 
-                                Your voice directly influences what features we build next.
-                            </p>
+
+                        <div class="card-modern">
+                            <div class="card-body p-6">
+                                <div class="flex items-center gap-4 mb-3">
+                                    <div class="w-12 h-12 bg-gradient-to-r from-orange-500 to-red-600 rounded-lg flex items-center justify-center">
+                                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                                        </svg>
+                                    </div>
+                                    <h3 class="text-xl font-bold text-orange-500">Community</h3>
+                                </div>
+                                <p class="text-gray-300">Building a supportive ecosystem where traders and developers collaborate and grow together.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <!-- Mission Goals -->
+            <div class="mt-20" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
+                    Mission Goals
+                </h2>
                 
-                <div class="space-y-8">
-                    <div class="flex items-start space-x-4">
-                        <div class="w-8 h-8 bg-orange-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                            </svg>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Short Term -->
+                    <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                        <div class="w-20 h-20 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <span class="text-2xl font-bold text-white">2024</span>
                         </div>
-                        <div>
-                            <h3 class="text-lg font-bold text-gray-900 mb-2">Enterprise-Grade Reliability</h3>
-                            <p class="text-gray-600">
-                                We maintain the same uptime and performance standards as paid enterprise 
-                                solutions, because your trading depends on it.
-                            </p>
-                        </div>
+                        <h3 class="text-2xl font-bold text-emerald-500 mb-4">Short Term</h3>
+                        <ul class="text-gray-300 space-y-2 text-left">
+                            <li>• Expand broker integrations to 30+</li>
+                            <li>• Launch mobile app for iOS and Android</li>
+                            <li>• Implement advanced AI strategies</li>
+                            <li>• Build comprehensive tutorial library</li>
+                        </ul>
                     </div>
-                    
-                    <div class="flex items-start space-x-4">
-                        <div class="w-8 h-8 bg-orange-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                            </svg>
+
+                    <!-- Medium Term -->
+                    <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                        <div class="w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <span class="text-2xl font-bold text-white">2025</span>
                         </div>
-                        <div>
-                            <h3 class="text-lg font-bold text-gray-900 mb-2">Continuous Innovation</h3>
-                            <p class="text-gray-600">
-                                We continuously integrate the latest technologies and trading innovations, 
-                                ensuring you always have access to cutting-edge tools.
-                            </p>
-                        </div>
+                        <h3 class="text-2xl font-bold text-blue-500 mb-4">Medium Term</h3>
+                        <ul class="text-gray-300 space-y-2 text-left">
+                            <li>• Expand to international markets</li>
+                            <li>• Launch professional certification program</li>
+                            <li>• Develop institutional-grade features</li>
+                            <li>• Create marketplace for strategies</li>
+                        </ul>
                     </div>
-                    
-                    <div class="flex items-start space-x-4">
-                        <div class="w-8 h-8 bg-orange-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                            </svg>
+
+                    <!-- Long Term -->
+                    <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                        <div class="w-20 h-20 bg-gradient-to-r from-purple-500 to-pink-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <span class="text-2xl font-bold text-white">2026+</span>
                         </div>
-                        <div>
-                            <h3 class="text-lg font-bold text-gray-900 mb-2">Educational Support</h3>
-                            <p class="text-gray-600">
-                                We provide comprehensive educational resources, tutorials, and community 
-                                support to help you succeed in algorithmic trading.
-                            </p>
-                        </div>
+                        <h3 class="text-2xl font-bold text-purple-500 mb-4">Long Term</h3>
+                        <ul class="text-gray-300 space-y-2 text-left">
+                            <li>• Become the global standard for algo trading</li>
+                            <li>• Launch AlgoBots Academy</li>
+                            <li>• Pioneer next-gen financial technologies</li>
+                            <li>• Foster 1M+ trader community</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Call to Action -->
+            <div class="mt-20 text-center" data-aos="fade-up" data-aos-delay="400">
+                <div class="bg-gradient-to-r from-blue-500/10 to-purple-600/10 rounded-2xl p-12">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
+                        Join Our Mission
+                    </h2>
+                    <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+                        Be part of the revolution that's democratizing algorithmic trading. Whether you're a trader, developer, or enthusiast, there's a place for you in the AlgoBots community.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="{{ url_for('auth.login') }}" class="btn btn-solid-primary text-white border-none btn-lg">
+                            Start Trading Now
+                        </a>
+                        <a href="https://github.com/marketcalls/algobots" target="_blank" class="btn btn-solid-secondary text-white border-none btn-lg">
+                            Contribute on GitHub
+                        </a>
                     </div>
                 </div>
             </div>
@@ -261,22 +197,16 @@
     </div>
 </section>
 
-<!-- Call to Action -->
-<section class="py-20 bg-gradient-to-r from-orange-600 to-red-700 text-white">
-    <div class="container mx-auto px-6 text-center">
-        <h2 class="text-4xl font-bold mb-6">Join Our Mission</h2>
-        <p class="text-xl mb-8 max-w-2xl mx-auto">
-            Help us democratize algorithmic trading. Whether you're a trader, developer, or advocate 
-            for open-source innovation, there's a place for you in our mission.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="{{ url_for('auth.login') }}" class="bg-white text-orange-600 px-8 py-3 rounded-lg font-semibold hover:bg-orange-50 transition-colors">
-                Start Trading Now
-            </a>
-            <a href="/team" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-orange-600 transition-colors">
-                Meet the Team
-            </a>
-        </div>
-    </div>
-</section>
+<!-- Load Animation Library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+
+<script>
+    // Initialize AOS
+    AOS.init({
+        duration: 800,
+        easing: 'ease-in-out',
+        once: true
+    });
+</script>
 {% endblock %}
