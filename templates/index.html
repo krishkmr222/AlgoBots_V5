@@ -304,7 +304,26 @@
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
-        animation: gradient-shift 3s ease-in-out infinite;
+        background-size: 300% 300%;
+        animation: gradient-shift 4s ease-in-out infinite, platform-pulse 2s ease-in-out infinite;
+        position: relative;
+        display: inline-block;
+        filter: drop-shadow(0 0 10px rgba(16, 185, 129, 0.3));
+    }
+    
+    .platform-gradient-text::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, #10b981 0%, #06b6d4 50%, #8b5cf6 100%);
+        background-size: 300% 300%;
+        opacity: 0;
+        filter: blur(15px);
+        animation: gradient-shift 4s ease-in-out infinite, pulse-glow 3s ease-in-out infinite;
+        z-index: -1;
     }
     
     .typed-personal-text {
