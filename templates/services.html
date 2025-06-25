@@ -1,327 +1,333 @@
 {% extends "layout.html" %}
 
-{% block title %}Our Services - OpenAlgo{% endblock %}
+{% block title %}Our Services - AlgoBots{% endblock %}
 
 {% block content %}
-<!-- Hero Section -->
-<section class="relative bg-gradient-to-br from-blue-900 via-indigo-800 to-blue-900 text-white overflow-hidden">
-    <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"%3E%3Cg fill-opacity="0.1"%3E%3Cpolygon fill="%23ffffff" points="50,0 60,40 100,50 60,60 50,100 40,60 0,50 40,40"/%3E%3C/g%3E%3C/svg%3E')] opacity-20"></div>
-    <div class="container mx-auto px-6 py-32 relative z-10">
-        <div class="text-center max-w-5xl mx-auto">
-            <div class="mb-8">
-                <svg class="w-24 h-24 mx-auto text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
-                </svg>
+<!-- Services Section with Modern Design -->
+<section class="section-modern w-full">
+    <div class="px-6 py-20">
+        <div class="max-w-6xl mx-auto">
+            <div class="section-header-modern" data-aos="fade-up">
+                <h1 class="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
+                    Our Services
+                </h1>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                    Comprehensive algorithmic trading solutions designed to empower traders at every level with professional-grade infrastructure and tools.
+                </p>
             </div>
-            <h1 class="text-6xl md:text-7xl font-bold mb-8 bg-gradient-to-r from-blue-200 to-blue-400 bg-clip-text text-transparent">
-                Our Services
-            </h1>
-            <p class="text-2xl md:text-3xl text-blue-100 leading-relaxed font-light">
-                Comprehensive algorithmic trading solutions designed to empower traders at every level 
-                with professional-grade infrastructure and tools.
-            </p>
+
+            <!-- Core Platform Services -->
+            <div class="mt-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
+                    Core Platform Services
+                </h2>
+                
+                <div class="grid lg:grid-cols-2 gap-8">
+                    <!-- Multi-Broker Integration -->
+                    <div class="card-modern" data-aos="fade-right" data-aos-delay="100">
+                        <div class="card-body p-8">
+                            <div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl flex items-center justify-center mb-6">
+                                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white mb-4">Multi-Broker Connectivity</h3>
+                            <p class="text-gray-300 mb-6">
+                                Seamlessly connect to 20+ major Indian brokers through a unified API interface. 
+                                No more juggling multiple APIs or dealing with different protocols.
+                            </p>
+                            <ul class="space-y-3 text-gray-300">
+                                <li class="flex items-center">
+                                    <svg class="w-5 h-5 text-blue-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    Zerodha, Angel One, Upstox, Fyers, and more
+                                </li>
+                                <li class="flex items-center">
+                                    <svg class="w-5 h-5 text-blue-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    Unified authentication and session management
+                                </li>
+                                <li class="flex items-center">
+                                    <svg class="w-5 h-5 text-blue-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    Real-time order and position synchronization
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Platform Integration -->
+                    <div class="card-modern" data-aos="fade-left" data-aos-delay="100">
+                        <div class="card-body p-8">
+                            <div class="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-600 rounded-xl flex items-center justify-center mb-6">
+                                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white mb-4">Universal Platform Support</h3>
+                            <p class="text-gray-300 mb-6">
+                                Connect your favorite trading platforms and tools directly to our infrastructure 
+                                for seamless strategy execution.
+                            </p>
+                            <ul class="space-y-3 text-gray-300">
+                                <li class="flex items-center">
+                                    <svg class="w-5 h-5 text-purple-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    TradingView, Amibroker, Python, R
+                                </li>
+                                <li class="flex items-center">
+                                    <svg class="w-5 h-5 text-purple-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    Excel, Google Sheets, MetaTrader
+                                </li>
+                                <li class="flex items-center">
+                                    <svg class="w-5 h-5 text-purple-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    Custom integrations via REST API
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Real-time Execution -->
+                    <div class="card-modern" data-aos="fade-right" data-aos-delay="200">
+                        <div class="card-body p-8">
+                            <div class="w-16 h-16 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center mb-6">
+                                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white mb-4">High-Performance Execution</h3>
+                            <p class="text-gray-300 mb-6">
+                                Ultra-low latency order execution and real-time market data processing 
+                                for competitive trading advantages.
+                            </p>
+                            <ul class="space-y-3 text-gray-300">
+                                <li class="flex items-center">
+                                    <svg class="w-5 h-5 text-emerald-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    Sub-100ms order execution latency
+                                </li>
+                                <li class="flex items-center">
+                                    <svg class="w-5 h-5 text-emerald-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    Real-time WebSocket market data streams
+                                </li>
+                                <li class="flex items-center">
+                                    <svg class="w-5 h-5 text-emerald-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    Smart order routing and optimization
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Analytics & Monitoring -->
+                    <div class="card-modern" data-aos="fade-left" data-aos-delay="200">
+                        <div class="card-body p-8">
+                            <div class="w-16 h-16 bg-gradient-to-r from-orange-500 to-red-600 rounded-xl flex items-center justify-center mb-6">
+                                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white mb-4">Advanced Analytics</h3>
+                            <p class="text-gray-300 mb-6">
+                                Comprehensive performance monitoring, risk analytics, and strategy 
+                                optimization tools to improve your trading results.
+                            </p>
+                            <ul class="space-y-3 text-gray-300">
+                                <li class="flex items-center">
+                                    <svg class="w-5 h-5 text-orange-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    Real-time P&L tracking and reporting
+                                </li>
+                                <li class="flex items-center">
+                                    <svg class="w-5 h-5 text-orange-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    Latency monitoring and optimization
+                                </li>
+                                <li class="flex items-center">
+                                    <svg class="w-5 h-5 text-orange-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    Strategy backtesting and analysis
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service Levels -->
+            <div class="mt-20" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
+                    Service Levels
+                </h2>
+                
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Free Tier -->
+                    <div class="card-modern" data-aos="fade-up" data-aos-delay="100">
+                        <div class="card-body p-8 text-center">
+                            <h3 class="text-2xl font-bold text-white mb-2">Community</h3>
+                            <div class="text-4xl font-bold text-blue-500 mb-4">FREE</div>
+                            <p class="text-gray-300 mb-6">Perfect for individual traders getting started</p>
+                            <ul class="space-y-4 mb-8 text-left">
+                                <li class="flex items-center">
+                                    <svg class="w-5 h-5 text-emerald-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    <span class="text-gray-300">Full platform access</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <svg class="w-5 h-5 text-emerald-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    <span class="text-gray-300">All broker integrations</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <svg class="w-5 h-5 text-emerald-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    <span class="text-gray-300">Community support</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <svg class="w-5 h-5 text-emerald-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    <span class="text-gray-300">Self-hosted deployment</span>
+                                </li>
+                            </ul>
+                            <button class="w-full py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg font-semibold hover:from-blue-600 hover:to-purple-700 transition-all btn-lg">
+                                Get Started
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Professional Tier -->
+                    <div class="card-modern relative" data-aos="fade-up" data-aos-delay="200">
+                        <div class="absolute top-4 right-4 bg-gradient-to-r from-yellow-400 to-orange-500 text-gray-900 px-3 py-1 rounded-full text-xs font-bold">
+                            POPULAR
+                        </div>
+                        <div class="card-body p-8 text-center">
+                            <h3 class="text-2xl font-bold text-white mb-2">Professional</h3>
+                            <div class="text-4xl font-bold text-purple-500 mb-4">$99/mo</div>
+                            <p class="text-gray-300 mb-6">For serious traders and small teams</p>
+                            <ul class="space-y-4 mb-8 text-left">
+                                <li class="flex items-center">
+                                    <svg class="w-5 h-5 text-emerald-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    <span class="text-gray-300">Everything in Community</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <svg class="w-5 h-5 text-emerald-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    <span class="text-gray-300">Priority support</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <svg class="w-5 h-5 text-emerald-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    <span class="text-gray-300">Advanced analytics</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <svg class="w-5 h-5 text-emerald-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    <span class="text-gray-300">Cloud hosting included</span>
+                                </li>
+                            </ul>
+                            <button class="w-full py-3 bg-gradient-to-r from-purple-500 to-pink-600 text-white rounded-lg font-semibold hover:from-purple-600 hover:to-pink-700 transition-all btn-lg">
+                                Choose Professional
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Enterprise Tier -->
+                    <div class="card-modern" data-aos="fade-up" data-aos-delay="300">
+                        <div class="card-body p-8 text-center">
+                            <h3 class="text-2xl font-bold text-white mb-2">Enterprise</h3>
+                            <div class="text-4xl font-bold text-orange-500 mb-4">Custom</div>
+                            <p class="text-gray-300 mb-6">For institutions and large teams</p>
+                            <ul class="space-y-4 mb-8 text-left">
+                                <li class="flex items-center">
+                                    <svg class="w-5 h-5 text-emerald-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    <span class="text-gray-300">Everything in Professional</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <svg class="w-5 h-5 text-emerald-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    <span class="text-gray-300">Custom integrations</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <svg class="w-5 h-5 text-emerald-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    <span class="text-gray-300">Dedicated support</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <svg class="w-5 h-5 text-emerald-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    <span class="text-gray-300">SLA guarantees</span>
+                                </li>
+                            </ul>
+                            <button class="w-full py-3 bg-gradient-to-r from-orange-500 to-red-600 text-white rounded-lg font-semibold hover:from-orange-600 hover:to-red-700 transition-all btn-lg">
+                                Contact Sales
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Call to Action -->
+            <div class="mt-20 text-center" data-aos="fade-up" data-aos-delay="400">
+                <div class="bg-gradient-to-r from-blue-500/10 to-purple-600/10 rounded-2xl p-12">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
+                        Ready to Transform Your Trading?
+                    </h2>
+                    <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+                        Join thousands of traders who have revolutionized their algorithmic trading with AlgoBots.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="{{ url_for('auth.login') }}" class="btn btn-solid-primary text-white border-none btn-lg">
+                            Get Started Now
+                        </a>
+                        <a href="/contact" class="btn btn-solid-secondary text-white border-none btn-lg">
+                            Contact Sales
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
 
-<!-- Core Platform Services -->
-<section class="py-24 bg-base-100">
-    <div class="container mx-auto px-6">
-        <div class="text-center mb-20">
-            <h2 class="text-4xl font-bold text-base-content mb-6">Core Platform Services</h2>
-            <p class="text-xl text-base-content/70 max-w-3xl mx-auto">
-                Our foundational services provide everything you need to build, deploy, and manage 
-                sophisticated algorithmic trading strategies.
-            </p>
-        </div>
-        
-        <div class="grid lg:grid-cols-2 gap-12">
-            <!-- Multi-Broker Integration -->
-            <div class="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 rounded-2xl p-8 border border-blue-200 dark:border-blue-700">
-                <div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-6">
-                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path>
-                    </svg>
-                </div>
-                <h3 class="text-2xl font-bold text-base-content mb-4">Multi-Broker Connectivity</h3>
-                <p class="text-base-content/70 mb-6">
-                    Seamlessly connect to 20+ major Indian brokers through a unified API interface. 
-                    No more juggling multiple APIs or dealing with different protocols.
-                </p>
-                <ul class="space-y-3 text-base-content/70">
-                    <li class="flex items-center">
-                        <svg class="w-5 h-5 text-blue-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                        </svg>
-                        Zerodha, Angel One, Upstox, Fyers, and more
-                    </li>
-                    <li class="flex items-center">
-                        <svg class="w-5 h-5 text-blue-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                        </svg>
-                        Unified authentication and session management
-                    </li>
-                    <li class="flex items-center">
-                        <svg class="w-5 h-5 text-blue-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                        </svg>
-                        Real-time order and position synchronization
-                    </li>
-                </ul>
-            </div>
+<!-- Load Animation Library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
 
-            <!-- Platform Integration -->
-            <div class="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 rounded-2xl p-8 border border-blue-200 dark:border-blue-700">
-                <div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-6">
-                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
-                    </svg>
-                </div>
-                <h3 class="text-2xl font-bold text-base-content mb-4">Universal Platform Support</h3>
-                <p class="text-base-content/70 mb-6">
-                    Connect your favorite trading platforms and tools directly to our infrastructure 
-                    for seamless strategy execution.
-                </p>
-                <ul class="space-y-3 text-base-content/70">
-                    <li class="flex items-center">
-                        <svg class="w-5 h-5 text-blue-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                        </svg>
-                        TradingView, Amibroker, Python, R
-                    </li>
-                    <li class="flex items-center">
-                        <svg class="w-5 h-5 text-blue-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                        </svg>
-                        Excel, Google Sheets, MetaTrader
-                    </li>
-                    <li class="flex items-center">
-                        <svg class="w-5 h-5 text-blue-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                        </svg>
-                        Custom integrations via REST API
-                    </li>
-                </ul>
-            </div>
-
-            <!-- Real-time Execution -->
-            <div class="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 rounded-2xl p-8 border border-blue-200 dark:border-blue-700">
-                <div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-6">
-                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                    </svg>
-                </div>
-                <h3 class="text-2xl font-bold text-base-content mb-4">High-Performance Execution</h3>
-                <p class="text-base-content/70 mb-6">
-                    Ultra-low latency order execution and real-time market data processing 
-                    for competitive trading advantages.
-                </p>
-                <ul class="space-y-3 text-base-content/70">
-                    <li class="flex items-center">
-                        <svg class="w-5 h-5 text-blue-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                        </svg>
-                        Sub-100ms order execution latency
-                    </li>
-                    <li class="flex items-center">
-                        <svg class="w-5 h-5 text-blue-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                        </svg>
-                        Real-time WebSocket market data streams
-                    </li>
-                    <li class="flex items-center">
-                        <svg class="w-5 h-5 text-blue-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                        </svg>
-                        Smart order routing and optimization
-                    </li>
-                </ul>
-            </div>
-
-            <!-- Analytics & Monitoring -->
-            <div class="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 rounded-2xl p-8 border border-blue-200 dark:border-blue-700">
-                <div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-6">
-                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
-                    </svg>
-                </div>
-                <h3 class="text-2xl font-bold text-base-content mb-4">Advanced Analytics</h3>
-                <p class="text-base-content/70 mb-6">
-                    Comprehensive performance monitoring, risk analytics, and strategy 
-                    optimization tools to improve your trading results.
-                </p>
-                <ul class="space-y-3 text-base-content/70">
-                    <li class="flex items-center">
-                        <svg class="w-5 h-5 text-blue-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                        </svg>
-                        Real-time P&L tracking and reporting
-                    </li>
-                    <li class="flex items-center">
-                        <svg class="w-5 h-5 text-blue-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                        </svg>
-                        Latency monitoring and optimization
-                    </li>
-                    <li class="flex items-center">
-                        <svg class="w-5 h-5 text-blue-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                        </svg>
-                        Strategy backtesting and analysis
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Service Levels -->
-<section class="py-24 bg-base-200">
-    <div class="container mx-auto px-6">
-        <div class="text-center mb-20">
-            <h2 class="text-4xl font-bold text-base-content mb-6">Service Levels</h2>
-            <p class="text-xl text-base-content/70 max-w-3xl mx-auto">
-                Choose the service level that best fits your trading needs and budget.
-            </p>
-        </div>
-        
-        <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <!-- Free Tier -->
-            <div class="bg-base-100 rounded-xl p-8 border border-base-300">
-                <div class="text-center mb-8">
-                    <h3 class="text-2xl font-bold text-base-content mb-2">Community</h3>
-                    <div class="text-4xl font-bold text-blue-600 mb-4">FREE</div>
-                    <p class="text-base-content/70">Perfect for individual traders getting started</p>
-                </div>
-                <ul class="space-y-4 mb-8">
-                    <li class="flex items-center">
-                        <svg class="w-5 h-5 text-green-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                        </svg>
-                        Full platform access
-                    </li>
-                    <li class="flex items-center">
-                        <svg class="w-5 h-5 text-green-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                        </svg>
-                        All broker integrations
-                    </li>
-                    <li class="flex items-center">
-                        <svg class="w-5 h-5 text-green-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                        </svg>
-                        Community support
-                    </li>
-                    <li class="flex items-center">
-                        <svg class="w-5 h-5 text-green-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                        </svg>
-                        Self-hosted deployment
-                    </li>
-                </ul>
-                <button class="w-full py-3 bg-base-300 text-base-content rounded-lg font-semibold hover:bg-base-content hover:text-base-100 transition-colors btn-lg">
-                    Get Started
-                </button>
-            </div>
-
-            <!-- Professional Tier -->
-            <div class="bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl p-8 text-white relative">
-                <div class="absolute top-4 right-4 bg-yellow-400 text-gray-900 px-3 py-1 rounded-full text-xs font-bold">
-                    POPULAR
-                </div>
-                <div class="text-center mb-8">
-                    <h3 class="text-2xl font-bold mb-2">Professional</h3>
-                    <div class="text-4xl font-bold mb-4">$99<span class="text-lg">/month</span></div>
-                    <p class="text-blue-100">For serious traders and small funds</p>
-                </div>
-                <ul class="space-y-4 mb-8">
-                    <li class="flex items-center">
-                        <svg class="w-5 h-5 text-green-300 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                        </svg>
-                        Everything in Community
-                    </li>
-                    <li class="flex items-center">
-                        <svg class="w-5 h-5 text-green-300 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                        </svg>
-                        Managed cloud hosting
-                    </li>
-                    <li class="flex items-center">
-                        <svg class="w-5 h-5 text-green-300 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                        </svg>
-                        Priority support
-                    </li>
-                    <li class="flex items-center">
-                        <svg class="w-5 h-5 text-green-300 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                        </svg>
-                        Advanced analytics
-                    </li>
-                </ul>
-                <button class="w-full py-3 bg-white text-blue-600 rounded-lg font-semibold hover:bg-blue-50 transition-colors btn-lg">
-                    Start Trial
-                </button>
-            </div>
-
-            <!-- Enterprise Tier -->
-            <div class="bg-base-content rounded-xl p-8 text-base-100">
-                <div class="text-center mb-8">
-                    <h3 class="text-2xl font-bold mb-2">Enterprise</h3>
-                    <div class="text-4xl font-bold mb-4">Custom</div>
-                    <p class="opacity-70">For institutions and large operations</p>
-                </div>
-                <ul class="space-y-4 mb-8">
-                    <li class="flex items-center">
-                        <svg class="w-5 h-5 text-green-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                        </svg>
-                        Everything in Professional
-                    </li>
-                    <li class="flex items-center">
-                        <svg class="w-5 h-5 text-green-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                        </svg>
-                        Dedicated infrastructure
-                    </li>
-                    <li class="flex items-center">
-                        <svg class="w-5 h-5 text-green-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                        </svg>
-                        Custom integrations
-                    </li>
-                    <li class="flex items-center">
-                        <svg class="w-5 h-5 text-green-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                        </svg>
-                        24/7 dedicated support
-                    </li>
-                </ul>
-                <button class="w-full py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors btn-lg">
-                    Contact Sales
-                </button>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Call to Action -->
-<section class="py-20 bg-gradient-to-r from-blue-600 to-indigo-700 text-white">
-    <div class="container mx-auto px-6 text-center">
-        <h2 class="text-4xl font-bold mb-6">Ready to Get Started?</h2>
-        <p class="text-xl mb-8 max-w-2xl mx-auto">
-            Choose the service level that fits your needs, or contact us to discuss 
-            custom solutions for your trading requirements.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="{{ url_for('auth.login') }}" class="btn btn-solid-primary text-white border-none btn-lg">
-                Start Free Trial
-            </a>
-            <a href="/contact" class="btn border-2 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-3 rounded-lg font-semibold transition-colors btn-lg">
-                Contact Sales
-            </a>
-        </div>
-    </div>
-</section>
+<script>
+    // Initialize AOS
+    AOS.init({
+        duration: 800,
+        easing: 'ease-in-out',
+        once: true
+    });
+</script>
 {% endblock %}
