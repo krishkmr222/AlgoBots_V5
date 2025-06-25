@@ -1,236 +1,273 @@
-// Enhanced Theme management with improved persistence
-const themeKey = 'theme';
-const previousThemeKey = 'previousTheme';
-const defaultTheme = 'light';
-const themes = ['light', 'dark'];
+// Enhanced Theme Management System - Single Source of Truth
+// Supports only Light and Dark themes with system preference detection
+const THEME_CONFIG = {
+    STORAGE_KEY: 'algobots-theme',
+    THEMES: {
+        LIGHT: 'light',
+        DARK: 'dark'
+    },
+    DEFAULT: 'light',
+    TRANSITION_DURATION: 300
+};
 
-// Set theme and persist to localStorage with session backup
-function setTheme(theme, force = false) {
-    if (!themes.includes(theme)) {
-        theme = defaultTheme;
-    }
-    
-    // Store current theme before changing to garden
-    if (!force && theme === 'garden') {
-        const currentTheme = document.documentElement.getAttribute('data-theme');
-        if (currentTheme !== 'garden') {
-            localStorage.setItem(previousThemeKey, currentTheme);
-            sessionStorage.setItem(previousThemeKey, currentTheme);
-        }
-    }
-    
-    // Apply theme immediately
-    document.documentElement.setAttribute('data-theme', theme);
-    document.body.setAttribute('data-theme', theme);
-    
-    // Update CSS custom properties for smooth transitions
-    updateCSSProperties(theme);
-    
-    // Only update localStorage if not garden theme or if forced
-    if (theme !== 'garden' || force) {
-        localStorage.setItem(themeKey, theme);
-        sessionStorage.setItem(themeKey, theme);
-    }
-    
-    // Update theme controller checkboxes and visibility
-    updateThemeControllers(theme);
-    
-    // Dispatch custom event for theme change
-    window.dispatchEvent(new CustomEvent('themeChanged', { detail: { theme } }));
-}
-
-// Update CSS custom properties for better theme transitions
-function updateCSSProperties(theme) {
-    const root = document.documentElement;
-    
-    // Set theme-specific CSS variables
-    if (theme === 'dark') {
-        root.style.setProperty('--theme-transition', 'all 0.3s ease');
-        root.style.setProperty('--glass-opacity', '0.1');
-        root.style.setProperty('--navbar-bg', 'rgba(0, 0, 0, 0.8)');
-    } else if (theme === 'light') {
-        root.style.setProperty('--theme-transition', 'all 0.3s ease');
-        root.style.setProperty('--glass-opacity', '0.05');
-        root.style.setProperty('--navbar-bg', 'rgba(255, 255, 255, 0.8)');
-    }
-}
-
-// Update theme controllers with enhanced feedback
-function updateThemeControllers(theme) {
-    const themeControllers = document.querySelectorAll('.theme-controller');
-    const themeSwitcher = document.querySelector('.theme-switcher');
-    
-    themeControllers.forEach(controller => {
-        controller.checked = theme === 'dark';
-        controller.disabled = theme === 'garden';
+class ThemeManager {
+    constructor() {
+        this.currentTheme = null;
+        this.systemPreference = this.detectSystemPreference();
+        this.controllers = [];
+        this.isInitialized = false;
         
-        // Add visual feedback
-        if (theme === 'garden') {
-            controller.parentElement.classList.add('disabled');
-        } else {
-            controller.parentElement.classList.remove('disabled');
-        }
-    });
-
-    // Toggle theme switcher disabled state with enhanced styling
-    if (themeSwitcher) {
-        if (theme === 'garden') {
-            themeSwitcher.classList.add('disabled');
-            themeSwitcher.setAttribute('data-tip', 'Theme locked in garden mode');
-        } else {
-            themeSwitcher.classList.remove('disabled');
-            themeSwitcher.setAttribute('data-tip', `Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`);
-        }
+        // Initialize theme immediately to prevent FOUC
+        this.initializeTheme();
+        
+        // Set up system preference listener
+        this.setupSystemPreferenceListener();
     }
-}
 
-// Enhanced theme toggle event handler
-function handleThemeToggle(e) {
-    const currentTheme = document.documentElement.getAttribute('data-theme');
-    if (currentTheme === 'garden') {
-        e.preventDefault();
-        return false; // Don't allow theme toggle in garden mode
+    /**
+     * Detect system color scheme preference
+     */
+    detectSystemPreference() {
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            return THEME_CONFIG.THEMES.DARK;
+        }
+        return THEME_CONFIG.THEMES.LIGHT;
     }
-    
-    const newTheme = e.target.checked ? 'dark' : 'light';
-    setTheme(newTheme);
-    
-    // Add subtle animation feedback
-    if (e.target.parentElement) {
-        e.target.parentElement.style.transform = 'scale(0.95)';
+
+    /**
+     * Get saved theme from localStorage with fallback to system preference
+     */
+    getSavedTheme() {
+        const saved = localStorage.getItem(THEME_CONFIG.STORAGE_KEY);
+        if (saved && Object.values(THEME_CONFIG.THEMES).includes(saved)) {
+            return saved;
+        }
+        return this.systemPreference;
+    }
+
+    /**
+     * Apply theme to document and store in localStorage
+     */
+    setTheme(theme, skipSave = false) {
+        // Validate theme
+        if (!Object.values(THEME_CONFIG.THEMES).includes(theme)) {
+            console.warn(`Invalid theme: ${theme}. Using default.`);
+            theme = THEME_CONFIG.DEFAULT;
+        }
+
+        // Apply theme immediately
+        document.documentElement.setAttribute('data-theme', theme);
+        document.body.setAttribute('data-theme', theme);
+        
+        // Update CSS custom properties for better transitions
+        this.updateCSSProperties(theme);
+        
+        // Save to localStorage unless skipped
+        if (!skipSave) {
+            localStorage.setItem(THEME_CONFIG.STORAGE_KEY, theme);
+        }
+        
+        // Update all theme controllers
+        this.updateControllers(theme);
+        
+        // Store current theme
+        this.currentTheme = theme;
+        
+        // Dispatch theme change event
+        this.dispatchThemeChangeEvent(theme);
+        
+        console.log(`Theme applied: ${theme}`);
+    }
+
+    /**
+     * Update CSS custom properties for smooth transitions
+     */
+    updateCSSProperties(theme) {
+        const root = document.documentElement;
+        
+        // Add transition class for smooth theme switching
+        document.body.classList.add('theme-transitioning');
+        
+        // Set theme-specific CSS variables
+        if (theme === THEME_CONFIG.THEMES.DARK) {
+            root.style.setProperty('--theme-transition', `all ${THEME_CONFIG.TRANSITION_DURATION}ms ease`);
+            root.style.setProperty('--navbar-bg', 'rgba(0, 0, 0, 0.8)');
+            root.style.setProperty('--glass-opacity', '0.1');
+            root.style.setProperty('--hero-overlay', 'rgba(0, 0, 0, 0.8)');
+        } else {
+            root.style.setProperty('--theme-transition', `all ${THEME_CONFIG.TRANSITION_DURATION}ms ease`);
+            root.style.setProperty('--navbar-bg', 'rgba(255, 255, 255, 0.8)');
+            root.style.setProperty('--glass-opacity', '0.05');
+            root.style.setProperty('--hero-overlay', 'rgba(0, 0, 0, 0.5)');
+        }
+        
+        // Remove transition class after animation
         setTimeout(() => {
-            e.target.parentElement.style.transform = 'scale(1)';
-        }, 150);
+            document.body.classList.remove('theme-transitioning');
+        }, THEME_CONFIG.TRANSITION_DURATION);
     }
-}
 
-// Enhanced initialization with fallback and validation
-function initializeTheme() {
-    // Check sessionStorage first for navigation consistency
-    const sessionTheme = sessionStorage.getItem(themeKey);
-    const localTheme = localStorage.getItem(themeKey);
-    
-    // Validate theme exists in our supported themes list
-    const savedTheme = validateTheme(sessionTheme) || validateTheme(localTheme) || defaultTheme;
-    
-    // Set theme immediately to prevent flash
-    document.documentElement.setAttribute('data-theme', savedTheme);
-    document.body.setAttribute('data-theme', savedTheme);
-    
-    // Update CSS properties
-    updateCSSProperties(savedTheme);
-    
-    // Update controllers
-    updateThemeControllers(savedTheme);
-    
-    return savedTheme;
-}
-
-// Validate theme exists in supported themes
-function validateTheme(theme) {
-    return theme && themes.includes(theme) ? theme : null;
-}
-
-// Function to restore previous theme with validation
-function restorePreviousTheme() {
-    const previousTheme = validateTheme(localStorage.getItem(previousThemeKey)) || 
-                         validateTheme(sessionStorage.getItem(previousThemeKey)) || 
-                         defaultTheme;
-    
-    if (previousTheme && previousTheme !== 'garden') {
-        setTheme(previousTheme, true);
-        // Clear the stored previous theme after restoration
-        localStorage.removeItem(previousThemeKey);
-        sessionStorage.removeItem(previousThemeKey);
-    } else {
-        setTheme(defaultTheme, true);
-    }
-}
-
-// System theme detection
-function detectSystemTheme() {
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        return 'dark';
-    }
-    return 'light';
-}
-
-// Auto theme based on system preference (optional feature)
-function enableAutoTheme() {
-    const systemTheme = detectSystemTheme();
-    if (!localStorage.getItem(themeKey)) {
-        setTheme(systemTheme);
-    }
-    
-    // Listen for system theme changes
-    if (window.matchMedia) {
-        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-            if (!localStorage.getItem(themeKey)) {
-                setTheme(e.matches ? 'dark' : 'light');
+    /**
+     * Update all registered theme controllers
+     */
+    updateControllers(theme) {
+        this.controllers.forEach(controller => {
+            if (controller && controller.type === 'checkbox') {
+                controller.checked = theme === THEME_CONFIG.THEMES.DARK;
             }
         });
     }
+
+    /**
+     * Register a theme controller (checkbox input)
+     */
+    registerController(controller) {
+        if (controller && !this.controllers.includes(controller)) {
+            this.controllers.push(controller);
+            
+            // Set initial state
+            controller.checked = this.currentTheme === THEME_CONFIG.THEMES.DARK;
+            
+            // Add event listener
+            controller.addEventListener('change', (e) => {
+                const newTheme = e.target.checked ? THEME_CONFIG.THEMES.DARK : THEME_CONFIG.THEMES.LIGHT;
+                this.setTheme(newTheme);
+                
+                // Add visual feedback
+                this.addVisualFeedback(e.target);
+            });
+            
+            console.log('Theme controller registered');
+        }
+    }
+
+    /**
+     * Add visual feedback to theme toggle
+     */
+    addVisualFeedback(element) {
+        const parent = element.closest('.theme-switcher') || element.parentElement;
+        if (parent) {
+            parent.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                parent.style.transform = 'scale(1)';
+            }, 150);
+        }
+    }
+
+    /**
+     * Toggle between light and dark theme
+     */
+    toggleTheme() {
+        const newTheme = this.currentTheme === THEME_CONFIG.THEMES.DARK 
+            ? THEME_CONFIG.THEMES.LIGHT 
+            : THEME_CONFIG.THEMES.DARK;
+        this.setTheme(newTheme);
+        return newTheme;
+    }
+
+    /**
+     * Initialize theme system
+     */
+    initializeTheme() {
+        const savedTheme = this.getSavedTheme();
+        this.setTheme(savedTheme, false);
+        this.isInitialized = true;
+    }
+
+    /**
+     * Set up system preference change listener
+     */
+    setupSystemPreferenceListener() {
+        if (window.matchMedia) {
+            const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+            mediaQuery.addListener((e) => {
+                this.systemPreference = e.matches ? THEME_CONFIG.THEMES.DARK : THEME_CONFIG.THEMES.LIGHT;
+                
+                // Only auto-switch if no manual preference is saved
+                const hasManualPreference = localStorage.getItem(THEME_CONFIG.STORAGE_KEY);
+                if (!hasManualPreference) {
+                    this.setTheme(this.systemPreference, true); // Don't save auto-switches
+                }
+            });
+        }
+    }
+
+    /**
+     * Dispatch custom theme change event
+     */
+    dispatchThemeChangeEvent(theme) {
+        const event = new CustomEvent('themeChanged', {
+            detail: { 
+                theme,
+                isDark: theme === THEME_CONFIG.THEMES.DARK,
+                isLight: theme === THEME_CONFIG.THEMES.LIGHT
+            },
+            bubbles: true
+        });
+        window.dispatchEvent(event);
+    }
+
+    /**
+     * Get current theme
+     */
+    getCurrentTheme() {
+        return this.currentTheme;
+    }
+
+    /**
+     * Check if current theme is dark
+     */
+    isDarkTheme() {
+        return this.currentTheme === THEME_CONFIG.THEMES.DARK;
+    }
+
+    /**
+     * Reset to system preference
+     */
+    resetToSystemPreference() {
+        localStorage.removeItem(THEME_CONFIG.STORAGE_KEY);
+        this.setTheme(this.systemPreference, true);
+    }
 }
 
-// Initialize theme immediately to prevent flash (IIFE)
-(function() {
-    const savedTheme = localStorage.getItem(themeKey) || 
-                      sessionStorage.getItem(themeKey) || 
-                      detectSystemTheme();
-    const validTheme = validateTheme(savedTheme) || defaultTheme;
-    
-    document.documentElement.setAttribute('data-theme', validTheme);
-    document.body.setAttribute('data-theme', validTheme);
-})();
+// Create global theme manager instance
+const themeManager = new ThemeManager();
 
-// Enhanced event listeners when DOM is loaded
+// DOM Content Loaded event listener for additional setup
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize theme
-    const currentTheme = initializeTheme();
-    
-    // Set initial state of theme toggles and add event listeners
-    const themeControllers = document.querySelectorAll('.theme-controller');
-    themeControllers.forEach(controller => {
-        controller.checked = currentTheme === 'dark';
-        controller.addEventListener('change', handleThemeToggle);
-        
-        // Add smooth transition effects
-        controller.style.transition = 'all 0.3s ease';
+    // Register all theme controllers
+    const controllers = document.querySelectorAll('.theme-controller');
+    controllers.forEach(controller => {
+        themeManager.registerController(controller);
     });
 
-    // Enhanced page visibility handler
+    // Handle page visibility changes for consistency
     document.addEventListener('visibilitychange', function() {
-        if (!document.hidden) {
-            // When page becomes visible, ensure theme is consistent
-            const sessionTheme = sessionStorage.getItem(themeKey);
-            if (sessionTheme && validateTheme(sessionTheme)) {
-                setTheme(sessionTheme);
+        if (!document.hidden && themeManager.isInitialized) {
+            // Re-apply current theme when page becomes visible
+            const currentTheme = themeManager.getCurrentTheme();
+            themeManager.updateControllers(currentTheme);
+        }
+    });
+
+    // Handle storage events for cross-tab synchronization
+    window.addEventListener('storage', function(e) {
+        if (e.key === THEME_CONFIG.STORAGE_KEY && e.newValue) {
+            const newTheme = e.newValue;
+            if (Object.values(THEME_CONFIG.THEMES).includes(newTheme)) {
+                themeManager.setTheme(newTheme, true); // Don't save again
             }
         }
     });
 
-    // Enhanced storage events for cross-tab consistency
-    window.addEventListener('storage', function(e) {
-        if (e.key === themeKey && e.newValue) {
-            const newTheme = validateTheme(e.newValue);
-            if (newTheme) {
-                setTheme(newTheme);
-            }
-        }
-    });
-    
-    // Optional: Enable auto theme detection
-    // enableAutoTheme();
+    console.log('Theme system initialized successfully');
 });
 
-// Export enhanced functions for use in other scripts
-window.themeManager = {
-    setTheme,
-    restorePreviousTheme,
-    initializeTheme,
-    detectSystemTheme,
-    enableAutoTheme,
-    validateTheme,
-    defaultTheme,
-    themes
-};
+// Export for global access
+window.themeManager = themeManager;
+window.THEME_CONFIG = THEME_CONFIG;
+
+// Backward compatibility exports
+window.setTheme = (theme) => themeManager.setTheme(theme);
+window.toggleTheme = () => themeManager.toggleTheme();
+window.getCurrentTheme = () => themeManager.getCurrentTheme();

@@ -1,4 +1,4 @@
-// Mode toggle functionality
+// Mode toggle functionality - Simplified without garden theme
 document.addEventListener('DOMContentLoaded', function() {
     const modeToggle = document.querySelector('.mode-controller');
     const modeBadge = document.getElementById('mode-badge');
@@ -13,11 +13,10 @@ document.addEventListener('DOMContentLoaded', function() {
     let currentMode = false; // false = Live Mode, true = Analyze Mode
     
     // Set initial badge text to prevent flash of empty content
-    // Don't set specific mode here - wait for server response
     modeBadge.textContent = 'Loading...';
     modeBadge.classList.add('badge-neutral');
 
-    function updateBadge(isAnalyzeMode, skipThemeChange = false) {
+    function updateBadge(isAnalyzeMode) {
         // Prevent unnecessary updates if mode hasn't actually changed
         if (isInitialized && currentMode === isAnalyzeMode) {
             return;
@@ -34,27 +33,9 @@ document.addEventListener('DOMContentLoaded', function() {
         if (isAnalyzeMode) {
             modeBadge.textContent = 'Analyze Mode';
             modeBadge.classList.add('badge-warning');
-            
-            if (!skipThemeChange && window.themeManager) {
-                // Store current theme before switching to garden
-                const currentTheme = document.documentElement.getAttribute('data-theme');
-                if (currentTheme !== 'garden') {
-                    localStorage.setItem('previousTheme', currentTheme);
-                    sessionStorage.setItem('previousTheme', currentTheme);
-                }
-                window.themeManager.setTheme('garden');
-            }
         } else {
             modeBadge.textContent = 'Live Mode';
             modeBadge.classList.add('badge-success');
-            
-            if (!skipThemeChange && window.themeManager) {
-                // Only restore theme if we're switching from analyze mode
-                const currentTheme = document.documentElement.getAttribute('data-theme');
-                if (currentTheme === 'garden') {
-                    window.themeManager.restorePreviousTheme();
-                }
-            }
         }
         
         // Update session storage
@@ -128,7 +109,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Handle page visibility changes - re-sync with server when page becomes visible
     document.addEventListener('visibilitychange', function() {
         if (!document.hidden && isInitialized) {
-            // Re-sync with server when page becomes visible
             console.log('[Mode] Page visible, re-syncing with server');
             initializeFromServer();
         }
@@ -139,7 +119,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (e.key === 'analyzeMode' && isInitialized) {
             const isAnalyzeMode = e.newValue === 'true';
             console.log('[Mode] Storage event received, updating to:', isAnalyzeMode ? 'Analyze Mode' : 'Live Mode');
-            updateBadge(isAnalyzeMode, true); // Skip theme change for storage events
+            updateBadge(isAnalyzeMode);
         }
     });
 });
