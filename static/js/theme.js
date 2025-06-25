@@ -93,7 +93,7 @@ class ThemeManager {
             root.style.setProperty('--theme-transition', `all ${THEME_CONFIG.TRANSITION_DURATION}ms ease`);
             root.style.setProperty('--navbar-bg', 'rgba(0, 0, 0, 0.8)');
             root.style.setProperty('--glass-opacity', '0.1');
-            root.style.setProperty('--hero-overlay', 'rgba(0, 0, 0, 0.8)');
+            root.style.setProperty('--hero-overlay', 'rgba(0, 0, 0, 0.4)');
         } else {
             root.style.setProperty('--theme-transition', `all ${THEME_CONFIG.TRANSITION_DURATION}ms ease`);
             root.style.setProperty('--navbar-bg', 'rgba(255, 255, 255, 0.8)');
