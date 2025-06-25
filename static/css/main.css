@@ -7284,3 +7284,45 @@ main {
     color: var(--fallback-pc,oklch(var(--pc)/var(--tw-text-opacity, 1)));
   }
 }
+
+/* Custom button styles for Mission page design */
+.btn-solid-primary {
+  background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+  color: white;
+  border: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-solid-primary:hover {
+  background: linear-gradient(90deg, #2563eb, #7c3aed);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+}
+
+.btn-solid-secondary {
+  background: linear-gradient(90deg, #6b7280, #9ca3af);
+  color: white;
+  border: 2px solid white;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-solid-secondary:hover {
+  background: white;
+  color: #3b82f6;
+  transform: translateY(-2px);
+}
+
+/* Section header modern styling */
+.section-header-modern {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-header-modern h1 {
+  background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
