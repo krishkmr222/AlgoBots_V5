@@ -2,7 +2,7 @@
 const themeKey = 'theme';
 const previousThemeKey = 'previousTheme';
 const defaultTheme = 'light';
-const themes = ['light', 'dark', 'garden'];
+const themes = ['light', 'dark'];
 
 // Set theme and persist to localStorage with session backup
 function setTheme(theme, force = false) {
