@@ -7,8 +7,13 @@
             </svg>
         </label>
         <a href="/" class="btn btn-ghost normal-case text-xl gap-2">
-            <img src="{{ url_for('static', filename='favicon/logo.png') }}" alt="AlgoBots" class="h-8 w-8">
-            <span class="hidden sm:inline">AlgoBots</span>
+            <div class="flex items-center gap-3">
+                <!-- Trading Bot Icon -->
+                <svg class="w-8 h-8 text-blue-500" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                </svg>
+                <span class="hidden sm:inline font-bold bg-gradient-to-r from-blue-500 to-blue-600 bg-clip-text text-transparent">AlgoBots</span>
+            </div>
         </a>
     </div>
 
