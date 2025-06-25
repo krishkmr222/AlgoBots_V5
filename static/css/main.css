@@ -754,16 +754,100 @@ html {
   --b1: 92.9519% 0.002163 17.197414;
   --bc: 16.9617% 0.001664 17.32068;
 }
+/* Enhanced Theme Management CSS */
+:root {
+    --theme-transition: all 0.3s ease;
+    --navbar-bg: rgba(255, 255, 255, 0.8);
+    --glass-opacity: 0.05;
+    --hero-overlay: rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="dark"] {
+    --navbar-bg: rgba(0, 0, 0, 0.8);
+    --glass-opacity: 0.1;
+    --hero-overlay: rgba(0, 0, 0, 0.8);
+}
+
+/* Smooth theme transitions */
 html {
-        scroll-behavior: smooth;
-        overflow-x: hidden;
-    }
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    transition: var(--theme-transition);
+}
+
 body {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-        background: var(--gradient-dark);
-        background-attachment: fixed;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    background: var(--gradient-dark);
+    background-attachment: fixed;
+    transition: var(--theme-transition);
+}
+
+/* Theme transition class for smooth switching */
+.theme-transitioning,
+.theme-transitioning * {
+    transition: background-color 0.3s ease, 
+                color 0.3s ease, 
+                border-color 0.3s ease,
+                box-shadow 0.3s ease !important;
+}
+
+/* Enhanced navbar responsiveness to theme */
+.navbar,
+.glass-navbar {
+    transition: var(--theme-transition);
+    backdrop-filter: blur(20px);
+    background: var(--navbar-bg);
+}
+
+/* Hero section theme improvements */
+.hero-section {
+    transition: var(--theme-transition);
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--hero-overlay);
+    transition: var(--theme-transition);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+}
+
+/* Card and component theme transitions */
+.card-modern,
+.alert,
+.btn,
+.badge,
+.menu li > *,
+.dropdown-content {
+    transition: var(--theme-transition);
+}
+
+/* Text elements theme transitions */
+h1, h2, h3, h4, h5, h6,
+p, span, div,
+.text-white,
+.text-gray-300,
+.text-gray-400 {
+    transition: color 0.3s ease;
+}
+
+/* Background elements theme transitions */
+.bg-base-100,
+.bg-base-200,
+.bg-base-300,
+.section-modern {
+    transition: background-color 0.3s ease;
 }
 /* Custom scrollbar */
 ::-webkit-scrollbar {
