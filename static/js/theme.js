@@ -1,10 +1,10 @@
-// Theme management
+// Enhanced Theme management with improved persistence
 const themeKey = 'theme';
 const previousThemeKey = 'previousTheme';
 const defaultTheme = 'light';
 const themes = ['light', 'dark', 'garden'];
 
-// Set theme and persist to localStorage
+// Set theme and persist to localStorage with session backup
 function setTheme(theme, force = false) {
     if (!themes.includes(theme)) {
         theme = defaultTheme;
@@ -19,7 +19,12 @@ function setTheme(theme, force = false) {
         }
     }
     
+    // Apply theme immediately
     document.documentElement.setAttribute('data-theme', theme);
+    document.body.setAttribute('data-theme', theme);
+    
+    // Update CSS custom properties for smooth transitions
+    updateCSSProperties(theme);
     
     // Only update localStorage if not garden theme or if forced
     if (theme !== 'garden' || force) {
@@ -28,66 +33,109 @@ function setTheme(theme, force = false) {
     }
     
     // Update theme controller checkboxes and visibility
+    updateThemeControllers(theme);
+    
+    // Dispatch custom event for theme change
+    window.dispatchEvent(new CustomEvent('themeChanged', { detail: { theme } }));
+}
+
+// Update CSS custom properties for better theme transitions
+function updateCSSProperties(theme) {
+    const root = document.documentElement;
+    
+    // Set theme-specific CSS variables
+    if (theme === 'dark') {
+        root.style.setProperty('--theme-transition', 'all 0.3s ease');
+        root.style.setProperty('--glass-opacity', '0.1');
+        root.style.setProperty('--navbar-bg', 'rgba(0, 0, 0, 0.8)');
+    } else if (theme === 'light') {
+        root.style.setProperty('--theme-transition', 'all 0.3s ease');
+        root.style.setProperty('--glass-opacity', '0.05');
+        root.style.setProperty('--navbar-bg', 'rgba(255, 255, 255, 0.8)');
+    }
+}
+
+// Update theme controllers with enhanced feedback
+function updateThemeControllers(theme) {
     const themeControllers = document.querySelectorAll('.theme-controller');
     const themeSwitcher = document.querySelector('.theme-switcher');
     
     themeControllers.forEach(controller => {
         controller.checked = theme === 'dark';
         controller.disabled = theme === 'garden';
+        
+        // Add visual feedback
+        if (theme === 'garden') {
+            controller.parentElement.classList.add('disabled');
+        } else {
+            controller.parentElement.classList.remove('disabled');
+        }
     });
 
-    // Toggle theme switcher disabled state
+    // Toggle theme switcher disabled state with enhanced styling
     if (themeSwitcher) {
         if (theme === 'garden') {
             themeSwitcher.classList.add('disabled');
+            themeSwitcher.setAttribute('data-tip', 'Theme locked in garden mode');
         } else {
             themeSwitcher.classList.remove('disabled');
+            themeSwitcher.setAttribute('data-tip', `Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`);
         }
     }
 }
 
-// Theme toggle event handler
+// Enhanced theme toggle event handler
 function handleThemeToggle(e) {
     const currentTheme = document.documentElement.getAttribute('data-theme');
     if (currentTheme === 'garden') {
-        return; // Don't allow theme toggle in garden mode
+        e.preventDefault();
+        return false; // Don't allow theme toggle in garden mode
     }
+    
     const newTheme = e.target.checked ? 'dark' : 'light';
     setTheme(newTheme);
+    
+    // Add subtle animation feedback
+    if (e.target.parentElement) {
+        e.target.parentElement.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+            e.target.parentElement.style.transform = 'scale(1)';
+        }, 150);
+    }
 }
 
-// Initialize theme from localStorage or sessionStorage
+// Enhanced initialization with fallback and validation
 function initializeTheme() {
     // Check sessionStorage first for navigation consistency
     const sessionTheme = sessionStorage.getItem(themeKey);
-    const savedTheme = sessionTheme || localStorage.getItem(themeKey) || defaultTheme;
+    const localTheme = localStorage.getItem(themeKey);
     
-    // Set theme without triggering storage events
+    // Validate theme exists in our supported themes list
+    const savedTheme = validateTheme(sessionTheme) || validateTheme(localTheme) || defaultTheme;
+    
+    // Set theme immediately to prevent flash
     document.documentElement.setAttribute('data-theme', savedTheme);
+    document.body.setAttribute('data-theme', savedTheme);
+    
+    // Update CSS properties
+    updateCSSProperties(savedTheme);
     
     // Update controllers
-    const themeControllers = document.querySelectorAll('.theme-controller');
-    themeControllers.forEach(controller => {
-        controller.checked = savedTheme === 'dark';
-        controller.disabled = savedTheme === 'garden';
-    });
-
-    // Update theme switcher state
-    const themeSwitcher = document.querySelector('.theme-switcher');
-    if (themeSwitcher) {
-        if (savedTheme === 'garden') {
-            themeSwitcher.classList.add('disabled');
-        } else {
-            themeSwitcher.classList.remove('disabled');
-        }
-    }
-
+    updateThemeControllers(savedTheme);
+    
     return savedTheme;
 }
 
-// Function to restore previous theme
+// Validate theme exists in supported themes
+function validateTheme(theme) {
+    return theme && themes.includes(theme) ? theme : null;
+}
+
+// Function to restore previous theme with validation
 function restorePreviousTheme() {
-    const previousTheme = localStorage.getItem(previousThemeKey) || sessionStorage.getItem(previousThemeKey) || defaultTheme;
+    const previousTheme = validateTheme(localStorage.getItem(previousThemeKey)) || 
+                         validateTheme(sessionStorage.getItem(previousThemeKey)) || 
+                         defaultTheme;
     
     if (previousTheme && previousTheme !== 'garden') {
         setTheme(previousTheme, true);
@@ -99,13 +147,43 @@ function restorePreviousTheme() {
     }
 }
 
-// Initialize theme immediately to prevent flash
+// System theme detection
+function detectSystemTheme() {
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        return 'dark';
+    }
+    return 'light';
+}
+
+// Auto theme based on system preference (optional feature)
+function enableAutoTheme() {
+    const systemTheme = detectSystemTheme();
+    if (!localStorage.getItem(themeKey)) {
+        setTheme(systemTheme);
+    }
+    
+    // Listen for system theme changes
+    if (window.matchMedia) {
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+            if (!localStorage.getItem(themeKey)) {
+                setTheme(e.matches ? 'dark' : 'light');
+            }
+        });
+    }
+}
+
+// Initialize theme immediately to prevent flash (IIFE)
 (function() {
-    const savedTheme = localStorage.getItem(themeKey) || sessionStorage.getItem(themeKey) || defaultTheme;
-    document.documentElement.setAttribute('data-theme', savedTheme);
+    const savedTheme = localStorage.getItem(themeKey) || 
+                      sessionStorage.getItem(themeKey) || 
+                      detectSystemTheme();
+    const validTheme = validateTheme(savedTheme) || defaultTheme;
+    
+    document.documentElement.setAttribute('data-theme', validTheme);
+    document.body.setAttribute('data-theme', validTheme);
 })();
 
-// Add event listeners when DOM is loaded
+// Enhanced event listeners when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize theme
     const currentTheme = initializeTheme();
@@ -115,32 +193,44 @@ document.addEventListener('DOMContentLoaded', function() {
     themeControllers.forEach(controller => {
         controller.checked = currentTheme === 'dark';
         controller.addEventListener('change', handleThemeToggle);
+        
+        // Add smooth transition effects
+        controller.style.transition = 'all 0.3s ease';
     });
 
-    // Handle page visibility changes
+    // Enhanced page visibility handler
     document.addEventListener('visibilitychange', function() {
         if (!document.hidden) {
             // When page becomes visible, ensure theme is consistent
             const sessionTheme = sessionStorage.getItem(themeKey);
-            if (sessionTheme) {
+            if (sessionTheme && validateTheme(sessionTheme)) {
                 setTheme(sessionTheme);
             }
         }
     });
 
-    // Handle storage events for cross-tab consistency
+    // Enhanced storage events for cross-tab consistency
     window.addEventListener('storage', function(e) {
-        if (e.key === themeKey) {
-            const newTheme = e.newValue || defaultTheme;
-            setTheme(newTheme);
+        if (e.key === themeKey && e.newValue) {
+            const newTheme = validateTheme(e.newValue);
+            if (newTheme) {
+                setTheme(newTheme);
+            }
         }
     });
+    
+    // Optional: Enable auto theme detection
+    // enableAutoTheme();
 });
 
-// Export functions for use in other scripts
+// Export enhanced functions for use in other scripts
 window.themeManager = {
     setTheme,
     restorePreviousTheme,
     initializeTheme,
-    defaultTheme
+    detectSystemTheme,
+    enableAutoTheme,
+    validateTheme,
+    defaultTheme,
+    themes
 };
