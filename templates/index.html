@@ -404,36 +404,32 @@
         line-height: 1.1;
     }
     
+    /* FIXED: Enhanced gradient text without background box */
     .platform-gradient-text {
         background: linear-gradient(135deg, #10b981 0%, #06b6d4 50%, #8b5cf6 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
-        background-size: 300% 300%;
-        animation: gradient-shift 4s ease-in-out infinite, platform-pulse 2s ease-in-out infinite;
+        background-size: 400% 400%;
+        animation: gradient-shift 6s ease-in-out infinite, platform-pulse 3s ease-in-out infinite;
         position: relative;
         display: inline-block;
-        filter: drop-shadow(0 0 10px rgba(16, 185, 129, 0.3));
+        text-shadow: none;
+        /* Removed the ::before pseudo-element that created background box */
     }
     
-    .platform-gradient-text::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: linear-gradient(135deg, #10b981 0%, #06b6d4 50%, #8b5cf6 100%);
-        background-size: 300% 300%;
-        opacity: 0;
-        filter: blur(15px);
-        animation: gradient-shift 4s ease-in-out infinite, pulse-glow 3s ease-in-out infinite;
-        z-index: -1;
-    }
-    
+    /* Enhanced typewriter cursor */
     .typed-personal-text {
         color: #e5e7eb;
         position: relative;
+        font-family: 'Inter', sans-serif;
+    }
+    
+    .typewriter-cursor {
+        color: #10b981;
+        animation: blink 1s infinite;
+        margin-left: 2px;
+        font-weight: normal;
     }
     
     .hero-subtitle {
@@ -464,18 +460,6 @@
         align-items: center;
     }
     
-    /* Typewriter cursor effect */
-    .typewriter-cursor {
-        color: #10b981;
-        animation: blink 1s infinite;
-        margin-left: 2px;
-        font-weight: normal;
-    }
-    
-    .typed-personal-text::after {
-        display: none; /* Hide the old cursor */
-    }
-    
     @keyframes blink {
         0%, 50% { opacity: 1; }
         51%, 100% { opacity: 0; }
@@ -483,19 +467,15 @@
     
     @keyframes gradient-shift {
         0%, 100% {
-            background: linear-gradient(135deg, #10b981 0%, #06b6d4 50%, #8b5cf6 100%);
             background-position: 0% 50%;
         }
         25% {
-            background: linear-gradient(135deg, #8b5cf6 0%, #10b981 50%, #06b6d4 100%);
             background-position: 100% 50%;
         }
         50% {
-            background: linear-gradient(135deg, #06b6d4 0%, #8b5cf6 50%, #10b981 100%);
             background-position: 50% 100%;
         }
         75% {
-            background: linear-gradient(135deg, #10b981 0%, #8b5cf6 50%, #06b6d4 100%);
             background-position: 0% 0%;
         }
     }
@@ -503,18 +483,11 @@
     @keyframes platform-pulse {
         0%, 100% {
             transform: scale(1);
+            filter: drop-shadow(0 0 20px rgba(16, 185, 129, 0.4));
         }
         50% {
-            transform: scale(1.02);
-        }
-    }
-    
-    @keyframes pulse-glow {
-        0%, 100% {
-            opacity: 0;
-        }
-        50% {
-            opacity: 0.3;
+            transform: scale(1.03);
+            filter: drop-shadow(0 0 30px rgba(6, 182, 212, 0.6));
         }
     }
     
@@ -538,10 +511,11 @@
         }
     }
     
-    /* Consistent Button Styles */
+    /* Enhanced Button Styles - Consistent solid colors */
     .btn-solid-primary {
         background-color: #10b981;
         transition: all 0.3s ease;
+        border: none;
     }
     
     .btn-solid-primary:hover {
@@ -553,6 +527,7 @@
     .btn-solid-secondary {
         background-color: #8b5cf6;
         transition: all 0.3s ease;
+        border: none;
     }
     
     .btn-solid-secondary:hover {
@@ -564,6 +539,7 @@
     .btn-solid-accent {
         background-color: #06b6d4;
         transition: all 0.3s ease;
+        border: none;
     }
     
     .btn-solid-accent:hover {
@@ -773,4 +749,63 @@
         transform: translateY(-4px);
     }
 </style>
+
+<!-- Enhanced Typewriter Effect Script -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const personalTextElement = document.querySelector('.typed-personal-text');
+    if (personalTextElement) {
+        const texts = [
+            'Your Personal', 
+            'Your AI-Powered', 
+            'Your Automated', 
+            'Your Smart', 
+            'Your Advanced',
+            'Your Professional',
+            'Your Intelligent',
+            'Your Ultimate'
+        ];
+        let currentTextIndex = 0;
+        let currentCharIndex = 0;
+        let isDeleting = false;
+        let isWaiting = false;
+        
+        function typeWriter() {
+            if (isWaiting) {
+                isWaiting = false;
+                setTimeout(typeWriter, 300);
+                return;
+            }
+            
+            const currentText = texts[currentTextIndex];
+            
+            if (isDeleting) {
+                const newText = currentText.substring(0, currentCharIndex - 1);
+                personalTextElement.innerHTML = newText + '<span class="typewriter-cursor">|</span>';
+                currentCharIndex--;
+            } else {
+                const newText = currentText.substring(0, currentCharIndex + 1);
+                personalTextElement.innerHTML = newText + '<span class="typewriter-cursor">|</span>';
+                currentCharIndex++;
+            }
+            
+            let typingSpeed = isDeleting ? 50 : 100;
+            
+            if (!isDeleting && currentCharIndex === currentText.length) {
+                typingSpeed = 2000;
+                isDeleting = true;
+            } else if (isDeleting && currentCharIndex === 0) {
+                isDeleting = false;
+                currentTextIndex = (currentTextIndex + 1) % texts.length;
+                typingSpeed = 500;
+                isWaiting = true;
+            }
+            
+            setTimeout(typeWriter, typingSpeed);
+        }
+        
+        setTimeout(typeWriter, 500);
+    }
+});
+</script>
 {% endblock %}
