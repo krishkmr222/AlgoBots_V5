@@ -465,11 +465,15 @@
     }
     
     /* Typewriter cursor effect */
-    .typed-personal-text::after {
-        content: '|';
+    .typewriter-cursor {
         color: #10b981;
         animation: blink 1s infinite;
         margin-left: 2px;
+        font-weight: normal;
+    }
+    
+    .typed-personal-text::after {
+        display: none; /* Hide the old cursor */
     }
     
     @keyframes blink {
