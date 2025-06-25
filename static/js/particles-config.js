@@ -1,11 +1,11 @@
-// Particle.js Configuration for OpenAlgo
-// Trading-themed particle effects
+// Particle.js Configuration for AlgoBots
+// Trading-themed particle effects with disconnected particles
 
 const ParticleConfig = {
     hero: {
         particles: {
             number: {
-                value: 50,
+                value: 60,
                 density: {
                     enable: true,
                     value_area: 800
@@ -22,37 +22,33 @@ const ParticleConfig = {
                 }
             },
             opacity: {
-                value: 0.6,
+                value: 0.7,
                 random: true,
                 anim: {
                     enable: true,
                     speed: 1,
-                    opacity_min: 0.1,
+                    opacity_min: 0.2,
                     sync: false
                 }
             },
             size: {
-                value: 3,
+                value: 4,
                 random: true,
                 anim: {
                     enable: true,
                     speed: 2,
-                    size_min: 0.1,
+                    size_min: 0.5,
                     sync: false
                 }
             },
             line_linked: {
-                enable: true,
-                distance: 150,
-                color: '#3b82f6',
-                opacity: 0.4,
-                width: 1
+                enable: false
             },
             move: {
                 enable: true,
-                speed: 2,
+                speed: 1.5,
                 direction: 'none',
-                random: false,
+                random: true,
                 straight: false,
                 out_mode: 'out',
                 bounce: false,
@@ -68,7 +64,7 @@ const ParticleConfig = {
             events: {
                 onhover: {
                     enable: true,
-                    mode: 'grab'
+                    mode: 'bubble'
                 },
                 onclick: {
                     enable: true,
@@ -84,10 +80,10 @@ const ParticleConfig = {
                     }
                 },
                 bubble: {
-                    distance: 400,
-                    size: 40,
+                    distance: 200,
+                    size: 8,
                     duration: 2,
-                    opacity: 8,
+                    opacity: 0.8,
                     speed: 3
                 },
                 repulse: {
