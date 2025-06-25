@@ -135,15 +135,30 @@ class OpenAlgoAnimations {
     }
 
     initTypedEffects() {
-        // Typewriter effect for "Your Personal" text
+        // Enhanced typewriter effect for "Your Personal" text with improved looping
         const personalTextElement = document.querySelector('.typed-personal-text');
         if (personalTextElement) {
-            const texts = ['Your Personal', 'Your AI-Powered', 'Your Automated', 'Your Smart', 'Your Advanced'];
+            const texts = [
+                'Your Personal', 
+                'Your AI-Powered', 
+                'Your Automated', 
+                'Your Smart', 
+                'Your Advanced',
+                'Your Professional',
+                'Your Intelligent'
+            ];
             let currentTextIndex = 0;
             let currentCharIndex = 0;
             let isDeleting = false;
+            let isWaiting = false;
             
             function typeWriter() {
+                if (isWaiting) {
+                    isWaiting = false;
+                    setTimeout(typeWriter, 500);
+                    return;
+                }
+                
                 const currentText = texts[currentTextIndex];
                 
                 if (isDeleting) {
@@ -154,27 +169,53 @@ class OpenAlgoAnimations {
                     currentCharIndex++;
                 }
                 
-                let typingSpeed = isDeleting ? 100 : 150;
+                let typingSpeed = isDeleting ? 80 : 120;
                 
                 if (!isDeleting && currentCharIndex === currentText.length) {
-                    // Pause at end of text
-                    typingSpeed = 2000;
+                    // Pause at end of text before starting to delete
+                    typingSpeed = 2500;
                     isDeleting = true;
                 } else if (isDeleting && currentCharIndex === 0) {
+                    // Finished deleting, move to next text
                     isDeleting = false;
                     currentTextIndex = (currentTextIndex + 1) % texts.length;
-                    typingSpeed = 500;
+                    typingSpeed = 800;
+                    isWaiting = true;
                 }
                 
                 setTimeout(typeWriter, typingSpeed);
             }
             
-            // Start the typewriter effect
-            typeWriter();
+            // Start the typewriter effect with initial delay
+            setTimeout(typeWriter, 1000);
         }
         
-        // Remove the old typed.js implementation for the platform text
-        // Platform text now has static gradient animation via CSS
+        // Initialize platform text pulse animation
+        this.initPlatformTextPulse();
+    }
+
+    initPlatformTextPulse() {
+        const platformText = document.querySelector('.platform-gradient-text');
+        if (platformText) {
+            // Create pulsing animation for the gradient text
+            gsap.to(platformText, {
+                scale: 1.02,
+                duration: 2,
+                ease: 'power2.inOut',
+                repeat: -1,
+                yoyo: true,
+                transformOrigin: 'center center'
+            });
+            
+            // Add subtle glow effect animation
+            gsap.to(platformText, {
+                textShadow: '0 0 20px rgba(16, 185, 129, 0.3), 0 0 40px rgba(6, 182, 212, 0.2), 0 0 60px rgba(139, 92, 246, 0.1)',
+                duration: 3,
+                ease: 'power2.inOut',
+                repeat: -1,
+                yoyo: true
+            });
+        }
     }
 
     initParticleEffects() {
